@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Crunch Craze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="image/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-shell">
+    <aside class="dashboard-sidebar" aria-label="Dashboard navigation">
+      <a class="dashboard-logo" href="index.html" aria-label="Crunch Craze home">
+        <img class="logo" src="image/logo.png" alt="Crunch Craze logo">
+        <div class="brand-text">
+          <div class="brand-name">Crunch Craze</div>
+          <div class="brand-tag">Specialty popcorn & snack boxes</div>
+        </div>
+      </a>
+
+      <nav class="dashboard-menu" aria-label="Account menu">
+        <a class="is-active" href="dashboard.html"><span>D</span> Dashboard</a>
+        <a href="subscription.html"><span>S</span> My Subscription</a>
+        <a href="orders.html"><span>O</span> My Orders</a>
+        <a href="snack-box.html"><span>B</span> My Snack Box</a>
+        <a href="rewards.html"><span>R</span> Rewards</a>
+        <a href="favorites.html"><span>F</span> Favorites</a>
+        <a href="track-delivery.html"><span>T</span> Track Delivery</a>
+        <a href="payments.html"><span>P</span> Payments</a>
+        <a href="address-book.html"><span>A</span> Address Book</a>
+        <a href="notifications.html"><span>N</span> Notifications <strong>3</strong></a>
+        <a href="settings.html"><span>G</span> Settings</a>
+        <a href="login.html"><span>L</span> Logout</a>
+      </nav>
+
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div>
+          <h1>Welcome back <span aria-hidden="true">&#128075;</span></h1>
+          <p>We're excited to snack with you again.</p>
+        </div>
+
+        <div class="dashboard-actions">
+          <button type="button">&#9906; Delivery Address</button>
+          <button class="notification-button" type="button" aria-label="Notifications">&#9671;<span>3</span></button>
+          <div class="profile-chip">
+            <span class="profile-icon" aria-hidden="true">A</span>
+            <strong>Aishwarya</strong>
+            <span>&#8964;</span>
+          </div>
+        </div>
+      </header>
+
+      
+      <section class="dashboard-grid">
+        <article class="dashboard-panel delivery-panel" id="delivery-tracker">
+          <div>
+            <h2>Delivery Tracker</h2>
+            <div class="delivery-progress">
+              <div class="delivery-step is-done"><span>&#10003;</span><strong>Order Confirmed</strong><small>22 June</small></div>
+              <div class="delivery-step is-done"><span>&#10003;</span><strong>Packed</strong><small>23 June</small></div>
+              <div class="delivery-step is-done"><span>&#10003;</span><strong>Shipped</strong><small>24 June</small></div>
+              <div class="delivery-step is-current"><span>&#9632;</span><strong>Out for Delivery</strong><small>26 June</small></div>
+              <div class="delivery-step"><span>&#9679;</span><strong>Delivered</strong><small>28 June</small></div>
+            </div>
+          </div>
+          <aside class="delivery-note">
+            <strong>Arriving Soon</strong>
+            <span>Expected between 9:00 AM and 12:00 PM.</span>
+            <small>Courier: Crunch Express</small>
+            <a href="#">Track live</a>
+          </aside>
+        </article>
+
+        <article class="dashboard-panel quick-actions-panel">
+          <div class="panel-heading">
+            <h2>Quick Actions</h2>
+            <a href="#">Manage</a>
+          </div>
+          <div class="quick-action-grid">
+            <a href="build-your-box.html"><span>+</span><strong>Add Snacks</strong><small>Customize this month</small></a>
+            <a href="payments.html"><span>%</span><strong>Use Coupons</strong><small>2 active offers</small></a>
+            <a href="address-book.html"><span>@</span><strong>Update Address</strong><small>Delivery details</small></a>
+          </div>
+        </article>
+
+        <article class="dashboard-panel monthly-panel" id="monthly-box">
+          <div class="panel-heading">
+            <h2>This Month's Snack Box</h2>
+            <a href="#">View All</a>
+          </div>
+          <div class="dashboard-snack-row">
+            <figure><img src="image/a8.jpg" alt="Cheese popcorn"><figcaption>Cheese Popcorn</figcaption></figure>
+            <figure><img src="image/a11.jpg" alt="Choco cookies"><figcaption>Choco Cookies</figcaption></figure>
+            <figure><img src="image/a10.jpg" alt="BBQ chips"><figcaption>BBQ Chips</figcaption></figure>
+            <figure><img src="image/a15.jpg" alt="Mixed nuts"><figcaption>Mixed Nuts</figcaption></figure>
+            <figure><img src="image/a5.png" alt="Surprise snack"><figcaption>Surprise Snack</figcaption></figure>
+          </div>
+          <a href="build-your-box.html" class="button primary">Customize Next Box</a>
+        </article>
+
+        <article class="dashboard-panel subscription-panel" id="subscription-status">
+          <h2>Subscription Status</h2>
+          <div class="subscription-card-body">
+            <img src="image/a7.png" alt="Crunch Craze subscription box">
+            <dl>
+              <dt>Current Plan</dt>
+              <dd>Movie Night Box</dd>
+              <dt>Renewal Date</dt>
+              <dd>15 July 2026</dd>
+              <dt>Status</dt>
+              <dd class="status-active">&#10003; Active</dd>
+            </dl>
+          </div>
+          <div class="subscription-actions">
+            <a class="button primary" href="subscription-plans.html">Upgrade</a>
+            <a class="button" href="#">Pause</a>
+            <a class="button danger-button" href="#">Cancel</a>
+          </div>
+        </article>
+
+        <article class="dashboard-panel recommendations-panel" id="recommended-snacks">
+          <div class="panel-heading">
+            <h2>Recommended For You</h2>
+            <a href="#">View All</a>
+          </div>
+          <div class="recommendation-grid">
+            <article><img src="image/a9.jpg" alt="Caramel popcorn"><strong>Caramel Popcorn</strong><span>&#8377;199 <button type="button">+</button></span></article>
+            <article><img src="image/a14.jpg" alt="Brownie bites"><strong>Brownie Bites</strong><span>&#8377;249 <button type="button">+</button></span></article>
+            <article><img src="image/12.jpg" alt="Trail mix"><strong>Trail Mix</strong><span>&#8377;199 <button type="button">+</button></span></article>
+            <article><img src="image/a13.jpg" alt="Nacho chips"><strong>Nacho Chips</strong><span>&#8377;149 <button type="button">+</button></span></article>
+          </div>
+        </article>
+
+        <article class="dashboard-panel rewards-panel" id="rewards-wallet">
+          <h2>Rewards Wallet</h2>
+          <div class="reward-ring"><span>&#127873;</span></div>
+          <strong>2,450</strong>
+          <p>Current Points</p>
+          <small>2,550 points to unlock next reward: Free Snack Box</small>
+        </article>
+
+        <article class="dashboard-panel spending-panel">
+          <div class="panel-heading">
+            <h2>Monthly Spending</h2>
+            <span>6 Months</span>
+          </div>
+          <div class="bar-chart" aria-label="Monthly spending chart">
+            <span style="height: 58%"><small>Jan</small></span>
+            <span style="height: 82%"><small>Feb</small></span>
+            <span style="height: 68%"><small>Mar</small></span>
+            <span style="height: 36%"><small>Apr</small></span>
+            <span style="height: 56%"><small>May</small></span>
+            <span style="height: 54%"><small>Jun</small></span>
+          </div>
+        </article>
+
+        <article class="dashboard-panel offers-panel">
+          <div class="panel-heading">
+            <h2>Special Offers</h2>
+            <a href="#">View All</a>
+          </div>
+          <div class="offer-banner">
+            <div>
+              <strong>Summer Snack Fest</strong>
+              <span>Up to 25% OFF</span>
+              <a href="#" class="button primary">Shop Now</a>
+            </div>
+            <img src="image/a6.png" alt="Special snack offer">
+          </div>
+        </article>
+
+        <article class="dashboard-panel orders-panel" id="recent-orders">
+          <div class="panel-heading">
+            <h2>Recent Orders</h2>
+            <a href="#">View All</a>
+          </div>
+          <table>
+            <thead><tr><th>Order ID</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>#CC101</td><td>15 Jun 2026</td><td>&#8377;899</td><td><span class="delivered">Delivered</span></td></tr>
+              <tr><td>#CC102</td><td>25 Jun 2026</td><td>&#8377;499</td><td><span class="shipped">Shipped</span></td></tr>
+              <tr><td>#CC103</td><td>30 Jun 2026</td><td>&#8377;1,699</td><td><span class="processing">Processing</span></td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="dashboard-panel achievements-panel">
+          <div class="panel-heading">
+            <h2>Achievements</h2>
+            <a href="#">View All</a>
+          </div>
+          <div class="achievement-row">
+            <span>&#9733;<small>Snack Explorer</small></span>
+            <span>&#10022;<small>Crunch Lover</small></span>
+            <span>&#9733;<small>Premium Member</small></span>
+            <span class="locked">&#9678;<small>Snack Legend</small></span>
+          </div>
+        </article>
+
+        <article class="dashboard-panel coupon-panel" id="coupon-wallet">
+          <div class="panel-heading">
+            <h2>Coupon Wallet</h2>
+            <a href="#">View All</a>
+          </div>
+          <div class="coupon-list">
+            <article><strong>WELCOME20</strong><span>20% OFF on all plans</span><button type="button">Copy Code</button></article>
+            <article><strong>FREESHIP</strong><span>Free Delivery</span><button type="button">Copy Code</button></article>
+          </div>
+        </article>
+      </section>
+
+      <section class="spin-banner">
+        <img src="image/a4.png" alt="Snack reward box">
+        <div>
+          <h2>Spin the Wheel &amp; Win!</h2>
+          <p>Spin once a month and win exciting snack rewards.</p>
+        </div>
+        <a href="#" class="button">Shop Now &rarr;</a>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

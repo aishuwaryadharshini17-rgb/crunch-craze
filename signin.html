@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | Crunch Craze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="image/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page login-only-page">
+    <main>
+      <section class="login-page" aria-labelledby="signin-heading">
+        <a class="login-brand" href="index.html" aria-label="Crunch Craze home">
+          <img class="logo" src="image/logo.png" alt="Crunch Craze logo">
+          <div class="brand-text">
+            <div class="brand-name">Crunch Craze</div>
+            <div class="brand-tag">Specialty popcorn & snack boxes</div>
+          </div>
+        </a>
+
+        <div class="login-visual reveal-on-scroll">
+          <img src="image/a1.jpg" alt="Crunchy popcorn snack cup">
+          <div class="login-badge">&#127873; Fresh rewards await</div>
+        </div>
+
+        <div class="login-card reveal-on-scroll">
+          <p class="section-kicker">Create Account</p>
+          <h1 id="signin-heading">Sign In</h1>
+          <p class="login-subtitle">Sign in to create your Crunch Craze account and start building your snack box.</p>
+
+          <form class="signin-form">
+            <div class="form-row">
+              <label for="signin-name">Full Name</label>
+              <input id="signin-name" type="text" placeholder="Enter your name">
+            </div>
+
+            <div class="form-row">
+              <label for="signin-email">Email Address</label>
+              <input id="signin-email" type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-row">
+              <label for="signin-password">Password</label>
+              <input id="signin-password" type="password" placeholder="Create a password">
+            </div>
+
+            <button class="button primary" type="submit">Sign In</button>
+          </form>
+
+          <p class="signup-note">Already have an account? <a href="login.html">Login</a></p>
+          <a class="back-home-link" href="index.html">Back to Home</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Your Box | Crunch Craze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="image/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page" id="top">
+    <header>
+      <a class="brand" href="index.html" aria-label="Crunch Craze home">
+        <img class="logo" src="image/logo.png" alt="Crunch Craze logo">
+        <div class="brand-text">
+          <div class="brand-name">Crunch Craze</div>
+          <div class="brand-tag">Specialty popcorn & snack boxes</div>
+        </div>
+      </a>
+      <div class="header-controls">
+        <button class="dark-toggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
+        <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+        <a class="login-link" href="login.html">Login</a>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="main-nav" aria-label="Main navigation">
+        <div class="dropdown">
+          <span class="menu-toggle">Home <span class="chevron" aria-hidden="true"></span></span>
+          <div class="submenu">
+            <a href="index.html">Home 1</a>
+            <a href="home2.html">Home 2</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="build-your-box.html" aria-current="page">Build Your Box</a>
+        <a href="subscription-plans.html">Subscription Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+        <div class="nav-actions" aria-label="Quick controls">
+          <button class="dark-toggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
+          <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+          <a class="login-link" href="login.html">Login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="builder-hero" aria-labelledby="builder-heading">
+        <div class="builder-hero-copy reveal-on-scroll">
+          <p class="section-kicker">&#128230; Build Your Box</p>
+          <h1 id="builder-heading">Create a snack box that matches your mood.</h1>
+          <p>Pick the size, choose your flavor families, add hand-picked snacks, and finish with gift-ready extras.</p>
+          <div class="builder-hero-actions">
+            <a class="button primary" href="#box-size">Start Building</a>
+            <a class="button" href="#summary">View Summary</a>
+          </div>
+          <div class="builder-hero-stats" aria-label="Build your box benefits">
+            <span><strong>10+</strong> snack slots</span>
+            <span><strong>150+</strong> snack picks</span>
+            <span><strong>Fresh</strong> sealed packs</span>
+          </div>
+        </div>
+        <div class="builder-hero-art reveal-on-scroll" aria-hidden="true">
+          <img class="builder-hero-main" src="image/a4.png" alt="">
+          <img class="builder-float builder-float-one" src="image/a8.jpg" alt="">
+          <img class="builder-float builder-float-two" src="image/a11.jpg" alt="">
+          <img class="builder-float builder-float-three" src="image/a15.jpg" alt="">
+        </div>
+      </section>
+
+      <section class="builder-process" aria-label="Build your box process">
+        <article class="reveal-on-scroll">
+          <span>01</span>
+          <strong>Choose Size</strong>
+          <p>Start with mini, standard, family, or party.</p>
+        </article>
+        <article class="reveal-on-scroll">
+          <span>02</span>
+          <strong>Pick Flavors</strong>
+          <p>Mix sweet, salty, healthy, and surprise snacks.</p>
+        </article>
+        <article class="reveal-on-scroll">
+          <span>03</span>
+          <strong>Add Extras</strong>
+          <p>Upgrade with wraps, drinks, dips, and notes.</p>
+        </article>
+        <article class="reveal-on-scroll">
+          <span>04</span>
+          <strong>Checkout</strong>
+          <p>Review the box and schedule delivery.</p>
+        </article>
+      </section>
+
+      <section class="builder-step" id="box-size" aria-labelledby="box-size-heading">
+        <div class="section-header reveal-on-scroll">
+          <p class="section-kicker">&#129351; Step 1</p>
+          <h2 id="box-size-heading">Select Your Box Size</h2>
+          <p class="section-intro">Choose the base that fits your snack plan. You can keep it personal or build for a full group.</p>
+        </div>
+        <div class="builder-size-grid">
+          <article class="builder-size-card reveal-on-scroll mini-size" role="button" tabindex="0">
+            <span>&#128992;</span>
+            <h3>Mini Box</h3>
+            <p>5 Snacks</p>
+            <strong>Best for Individuals</strong>
+            <div>&#8377;499</div>
+          </article>
+          <article class="builder-size-card reveal-on-scroll standard-size is-selected" role="button" tabindex="0">
+            <span>&#128993;</span>
+            <h3>Standard Box &#11088;</h3>
+            <p>10 Snacks</p>
+            <strong>Most Popular</strong>
+            <div>&#8377;899</div>
+          </article>
+          <article class="builder-size-card reveal-on-scroll family-size" role="button" tabindex="0">
+            <span>&#128994;</span>
+            <h3>Family Box</h3>
+            <p>20 Snacks</p>
+            <strong>Perfect for Families</strong>
+            <div>&#8377;1499</div>
+          </article>
+          <article class="builder-size-card reveal-on-scroll party-size" role="button" tabindex="0">
+            <span>&#128309;</span>
+            <h3>Party Box</h3>
+            <p>30+ Snacks</p>
+            <strong>Great for Events</strong>
+            <div>&#8377;2499</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="builder-step builder-categories" aria-labelledby="categories-heading">
+        <div class="section-header reveal-on-scroll">
+          <p class="section-kicker">&#127871; Step 2</p>
+          <h2 id="categories-heading">Choose Snack Categories</h2>
+          <p class="section-intro">Tap your favorite flavor families so the box feels balanced from the first bite to the last.</p>
+        </div>
+        <div class="builder-category-grid" aria-label="Snack categories">
+          <button type="button">&#127871; Popcorn</button>
+          <button type="button">&#127851; Chocolates</button>
+          <button type="button">&#127850; Cookies</button>
+          <button type="button">&#129364; Chips</button>
+          <button type="button">&#129384; Pretzels</button>
+          <button type="button">&#129372; Dry Fruits</button>
+          <button type="button">&#127806; Granola</button>
+          <button type="button">&#128170; Protein Snacks</button>
+          <button type="button">&#127852; Candies</button>
+          <button type="button">&#129372; Mixed Nuts</button>
+        </div>
+      </section>
+
+      <section class="builder-step" aria-labelledby="snacks-heading">
+        <div class="section-header reveal-on-scroll">
+          <p class="section-kicker">&#128722; Step 3</p>
+          <h2 id="snacks-heading">Select Your Snacks</h2>
+          <p class="section-intro">Popular picks are ready below. Adjust quantity and add the ones you want in this month&apos;s box.</p>
+        </div>
+        <div class="builder-product-grid">
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/c1.jpg" alt="Cheese Popcorn">
+            <div class="builder-product-body"><small>Best Seller</small><h3>Cheese Popcorn</h3><span>&#8377;199</span><div>&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/c2.jpg" alt="Caramel Popcorn">
+            <div class="builder-product-body"><small>Sweet Crunch</small><h3>Caramel Popcorn</h3><span>&#8377;229</span><div>&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/c3.jpg" alt="BBQ Chips">
+            <div class="builder-product-body"><small>Smoky</small><h3>BBQ Chips</h3><span>&#8377;149</span><div>&#9733;&#9733;&#9733;&#9733;&#9734;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/c4.jpg" alt="Chocolate Cookies">
+            <div class="builder-product-body"><small>Premium</small><h3>Chocolate Cookies</h3><span>&#8377;249</span><div>&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/12.jpg" alt="Salted Almonds">
+            <div class="builder-product-body"><small>Healthy</small><h3>Salted Almonds</h3><span>&#8377;299</span><div>&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/a14.jpg" alt="Brownie Bites">
+            <div class="builder-product-body"><small>Rich Cocoa</small><h3>Brownie Bites</h3><span>&#8377;259</span><div>&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/c5.jpg" alt="Granola Bites">
+            <div class="builder-product-body"><small>Light Bite</small><h3>Granola Bites</h3><span>&#8377;189</span><div>&#9733;&#9733;&#9733;&#9733;&#9734;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/c6.jpg" alt="Protein Bar">
+            <div class="builder-product-body"><small>Fitness</small><h3>Protein Bar</h3><span>&#8377;159</span><div>&#9733;&#9733;&#9733;&#9733;&#9734;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/c7.jpg" alt="Mixed Nuts">
+            <div class="builder-product-body"><small>Energy Mix</small><h3>Mixed Nuts</h3><span>&#8377;349</span><div>&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+          <article class="builder-product-card reveal-on-scroll">
+            <img src="image/c8.jpg" alt="Fruit Candy">
+            <div class="builder-product-body"><small>Fun Pick</small><h3>Fruit Candy</h3><span>&#8377;129</span><div>&#9733;&#9733;&#9733;&#9733;&#9734;</div><div class="qty-control"><button>-</button><strong>1</strong><button>+</button></div><a class="button primary" href="#summary">Add to Box</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="builder-step" aria-labelledby="delivery-heading">
+        <div class="section-header reveal-on-scroll">
+          <p class="section-kicker">&#128666; Step 4</p>
+          <h2 id="delivery-heading">Choose Delivery Frequency</h2>
+          <p class="section-intro">Keep it one-time for gifting, or make it recurring for monthly snack refills.</p>
+        </div>
+        <div class="delivery-grid">
+          <button type="button">
+            <span class="delivery-icon">&#128197;</span>
+            <strong>One-Time</strong>
+            <small>Gift or trial box</small>
+          </button>
+          <button type="button">
+            <span class="delivery-icon">&#128230;</span>
+            <strong>Weekly</strong>
+            <small>Fresh snack refill</small>
+          </button>
+          <button type="button">
+            <span class="delivery-icon">&#128230;</span>
+            <strong>Bi-Weekly</strong>
+            <small>Every two weeks</small>
+          </button>
+          <button class="is-selected" type="button">
+            <span class="delivery-icon">&#11088;</span>
+            <strong>Monthly</strong>
+            <small>Most popular plan</small>
+          </button>
+          <button type="button">
+            <span class="delivery-icon">&#128230;</span>
+            <strong>Every 2 Months</strong>
+            <small>Slow and steady</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="builder-step extras-summary" id="summary" aria-label="Extras and order summary">
+        <div class="extras-panel reveal-on-scroll">
+          <div class="builder-panel-heading">
+            <p class="section-kicker">&#127873; Step 5</p>
+            <h2>Add Extras</h2>
+            <p>Make the box feel more personal with small upgrades before checkout.</p>
+          </div>
+          <div class="extras-card-grid">
+            <label class="extra-card">
+              <input type="checkbox">
+              <span class="extra-icon">&#9749;</span>
+              <span class="extra-copy"><strong>Coffee Sachets</strong><small>Perfect with cookies</small></span>
+              <span class="extra-price">+&#8377;99</span>
+            </label>
+            <label class="extra-card">
+              <input type="checkbox">
+              <span class="extra-icon">&#129380;</span>
+              <span class="extra-copy"><strong>Soft Drinks</strong><small>Chilled party pairing</small></span>
+              <span class="extra-price">+&#8377;149</span>
+            </label>
+            <label class="extra-card is-selected">
+              <input type="checkbox" checked>
+              <span class="extra-icon">&#127881;</span>
+              <span class="extra-copy"><strong>Birthday Gift Wrap</strong><small>Ribbon, tag, and festive wrap</small></span>
+              <span class="extra-price">+&#8377;79</span>
+            </label>
+            <label class="extra-card">
+              <input type="checkbox">
+              <span class="extra-icon">&#128140;</span>
+              <span class="extra-copy"><strong>Personalized Message</strong><small>Add a note inside</small></span>
+              <span class="extra-price">+&#8377;49</span>
+            </label>
+            <label class="extra-card">
+              <input type="checkbox">
+              <span class="extra-icon">&#127873;</span>
+              <span class="extra-copy"><strong>Surprise Snack</strong><small>Chef's mystery pick</small></span>
+              <span class="extra-price">+&#8377;99</span>
+            </label>
+            <label class="extra-card">
+              <input type="checkbox">
+              <span class="extra-icon">&#129367;</span>
+              <span class="extra-copy"><strong>Dip Combo</strong><small>Cheese and salsa dips</small></span>
+              <span class="extra-price">+&#8377;89</span>
+            </label>
+          </div>
+          <div class="extras-note-card">
+            <div class="extras-note-icon">&#128230;</div>
+            <div>
+              <h3>Finishing Touches</h3>
+              <p>Your box will be packed fresh with sealed snack pouches, a flavor card, and a small thank-you note.</p>
+              <div class="extras-note-pills">
+                <span>Fresh Packed</span>
+                <span>Eco Box</span>
+                <span>Gift Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="summary-card reveal-on-scroll">
+          <div class="summary-top">
+            <div>
+              <p class="section-kicker">&#128179; Step 6</p>
+              <h2>Order Summary</h2>
+            </div>
+            <span class="summary-badge">Monthly</span>
+          </div>
+          <div class="summary-box-preview">
+            <img src="image/a4.png" alt="Standard snack box preview">
+            <div>
+              <strong>Standard Box</strong>
+              <span>10 snack slots selected</span>
+            </div>
+          </div>
+          <div class="summary-snacks" aria-label="Selected snacks">
+            <span>&#10003; Cheese Popcorn</span>
+            <span>&#10003; BBQ Chips</span>
+            <span>&#10003; Chocolate Cookies</span>
+            <span>&#10003; Mixed Nuts</span>
+            <span>&#10003; Granola Bites</span>
+          </div>
+          <div class="summary-lines">
+            <div><span>Box Size</span><strong>Standard Box</strong></div>
+            <div><span>Delivery</span><strong>Monthly</strong></div>
+            <div><span>Extras</span><strong>Gift Wrap</strong></div>
+            <div><span>Subtotal</span><strong>&#8377;899</strong></div>
+            <div><span>Extras</span><strong>&#8377;79</strong></div>
+            <div><span>Delivery</span><strong>Free</strong></div>
+          </div>
+          <div class="summary-total-row">
+            <span>Total</span>
+            <strong class="summary-total">&#8377;978</strong>
+          </div>
+          <div class="summary-actions">
+            <a class="button primary" href="#">Continue to Checkout</a>
+            <a class="button" href="#">Save for Later</a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="builder-offer reveal-on-scroll" aria-label="Special offer">
+        <div>
+          <p class="section-kicker">&#127881; Special Offer Banner</p>
+          <h2>Buy 2 Boxes &amp; Get 1 Surprise Snack FREE!</h2>
+        </div>
+        <a class="button primary" href="#summary">Claim Offer</a>
+      </section>
+
+      <section class="builder-step" aria-labelledby="recommended-heading">
+        <div class="section-header reveal-on-scroll">
+          <p class="section-kicker">&#11088; Recommended for You</p>
+          <h2 id="recommended-heading">Snack Picks Based on Your Box</h2>
+        </div>
+        <div class="recommend-grid">
+          <article><img src="image/a9.jpg" alt="Caramel Popcorn"><h3>Caramel Popcorn</h3></article>
+          <article><img src="image/a13.jpg" alt="Nachos"><h3>Nachos</h3></article>
+          <article><img src="image/a11.jpg" alt="Chocolate Bar"><h3>Chocolate Bar</h3></article>
+          <article><img src="image/a15.jpg" alt="Trail Mix"><h3>Trail Mix</h3></article>
+        </div>
+      </section>
+    </main>
+  </div>
+<footer>
+      <div class="footer-main">
+        <section>
+          <img class="footer-logo" src="image/logo.png" alt="Crinch Craze logo">
+          <h2 class="footer-brand">Crinch Craze</h2>
+          <p class="footer-tagline">Customize. Subscribe. Snack Happier.</p>
+          <p>
+            Discover delicious popcorn, gourmet snacks, and personalized snack boxes delivered right to your doorstep.
+            Enjoy fresh flavors, flexible subscriptions, and a premium snacking experience.
+          </p>
+        </section>
+
+        <section>
+          <h2>Quick Links</h2>
+          <ul class="footer-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="build-your-box.html">Build Your Box</a></li>
+            <li><a href="subscription-plans.html">Subscription Plans</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Categories</h2>
+          <ul class="footer-list">
+            <li><a href="#">🍿 Popcorn</a></li>
+            <li><a href="#">🍪 Cookies</a></li>
+            <li><a href="#">🍫 Chocolates</a></li>
+            <li><a href="#">🥜 Nuts</a></li>
+            <li><a href="#">🥨 Chips</a></li>
+            <li><a href="#">🌽 Healthy Snacks</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Customer Support</h2>
+          <ul class="footer-list">
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Contact Us</h2>
+          <span class="support-line">📍 Madurai, Tamil Nadu, India</span>
+          <span class="support-line">📧 support@crinchcraze.com</span>
+          <span class="support-line">📞 +91 98765 43210</span>
+          <span class="support-line">🕒 Mon - Sat : 9:00 AM - 7:00 PM</span>
+
+          <h2>Newsletter</h2>
+          <p>Stay Updated! Get exclusive offers, new snack launches, and monthly subscription discounts.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email Address" aria-label="Email Address">
+            <button type="submit">Subscribe</button>
+          </form>
+
+          <h2>Follow Us</h2>
+          <ul class="social-list">
+            <li><a href="#" aria-label="Facebook"><span class="social-icon">f</span></a></li>
+            <li><a href="#" aria-label="Instagram"><span class="social-icon camera-icon"></span></a></li>
+            <li><a href="#" aria-label="X Twitter"><span class="social-icon">X</span></a></li>
+            <li><a href="#" aria-label="Pinterest"><span class="social-icon">P</span></a></li>
+            <li><a href="#" aria-label="YouTube"><span class="social-icon play-icon"></span></a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Crinch Craze. All Rights Reserved.</span>
+        <span>Designed with ❤️ for Snack Lovers.</span>
+      </div>
+    </footer>
+  </div>
+
+<a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+  <script src="js/script.js"></script>
+</body>
+</html>

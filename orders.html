@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders | Crunch Craze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="image/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-shell">
+    <aside class="dashboard-sidebar" aria-label="Dashboard navigation">
+      <a class="dashboard-logo" href="index.html" aria-label="Crunch Craze home"><img class="logo" src="image/logo.png" alt="Crunch Craze logo"><div class="brand-text"><div class="brand-name">Crunch Craze</div><div class="brand-tag">Specialty popcorn & snack boxes</div></div></a>
+      <nav class="dashboard-menu" aria-label="Account menu">
+        <a href="dashboard.html"><span>D</span> Dashboard</a><a href="subscription.html"><span>S</span> My Subscription</a><a class="is-active" href="orders.html"><span>O</span> My Orders</a><a href="snack-box.html"><span>B</span> My Snack Box</a><a href="rewards.html"><span>R</span> Rewards</a><a href="favorites.html"><span>F</span> Favorites</a><a href="track-delivery.html"><span>T</span> Track Delivery</a><a href="payments.html"><span>P</span> Payments</a><a href="address-book.html"><span>A</span> Address Book</a><a href="notifications.html"><span>N</span> Notifications <strong>3</strong></a><a href="settings.html"><span>G</span> Settings</a><a href="login.html"><span>L</span> Logout</a>
+      </nav>
+    </aside>
+    <main class="dashboard-main">
+      <header class="dashboard-topbar"><div><h1>My Orders</h1><p>Review purchases, reorder favorites, download invoices, and follow every snack shipment.</p></div><div class="profile-chip"><span class="profile-icon">A</span><strong>Aishwarya</strong><span>&#8964;</span></div></header>
+      <section class="account-page-grid">
+        <article class="dashboard-panel wide-panel feature-panel"><div class="account-summary"><img src="image/a4.png" alt="Recent snack order"><div><span class="account-kicker">Latest Order</span><h2>#CC103 is processing</h2><p>Your Family Feast add-on order is being packed with fresh popcorn tubs, cookies, and party chips.</p><a class="button primary" href="track-delivery.html">Track Order</a></div></div></article>
+        <article class="dashboard-panel orders-panel"><div class="panel-heading"><h2>Order History</h2><a href="#">Download</a></div><table><thead><tr><th>Order</th><th>Date</th><th>Total</th><th>Status</th></tr></thead><tbody><tr><td>#CC101</td><td>15 Jun</td><td>&#8377;899</td><td><span class="delivered">Delivered</span></td></tr><tr><td>#CC102</td><td>25 Jun</td><td>&#8377;499</td><td><span class="shipped">Shipped</span></td></tr><tr><td>#CC103</td><td>30 Jun</td><td>&#8377;1,699</td><td><span class="processing">Processing</span></td></tr></tbody></table></article>
+        <article class="dashboard-panel"><div class="panel-heading"><h2>Reorder Shortcuts</h2><span>Popular</span></div><div class="account-mini-grid"><div class="account-mini-card"><span>Repeat</span><strong>Movie Night Box</strong><small>Same snacks as June.</small></div><div class="account-mini-card"><span>Add</span><strong>Brownie Bites</strong><small>Best with caramel popcorn.</small></div><div class="account-mini-card"><span>Bundle</span><strong>Family Treats</strong><small>Large sharing snacks.</small></div><div class="account-mini-card"><span>Gift</span><strong>Surprise Box</strong><small>Send to a friend.</small></div></div></article>
+        <article class="dashboard-panel wide-panel"><div class="panel-heading"><h2>Order Support</h2><span>Fast help</span></div><ul class="account-list"><li><strong>Need invoice for #CC101?</strong><span class="account-pill">Ready</span></li><li><strong>Report damaged snack pack within 48 hours.</strong><span class="account-pill">Open</span></li><li><strong>Change delivery slot before dispatch.</strong><span class="account-pill">Allowed</span></li><li><strong>Reward points are credited after delivery.</strong><span class="account-pill">Auto</span></li></ul></article>
+      </section>
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

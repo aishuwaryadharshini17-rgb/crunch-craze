@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Crunch Craze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="image/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page" id="top">
+    <header>
+      <a class="brand" href="index.html" aria-label="Crunch Craze home">
+        <img class="logo" src="image/logo.png" alt="Crunch Craze logo">
+        <div class="brand-text">
+          <div class="brand-name">Crunch Craze</div>
+          <div class="brand-tag">Specialty popcorn & snack boxes</div>
+        </div>
+      </a>
+      <div class="header-controls">
+        <button class="dark-toggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
+        <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+        <a class="login-link" href="login.html">Login</a>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="main-nav" aria-label="Main navigation">
+        <div class="dropdown">
+          <span class="menu-toggle">Home <span class="chevron" aria-hidden="true"></span></span>
+          <div class="submenu">
+            <a href="index.html">Home 1</a>
+            <a href="home2.html">Home 2</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="build-your-box.html">Build Your Box</a>
+        <a href="subscription-plans.html">Subscription Plans</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+        <div class="nav-actions" aria-label="Quick controls">
+          <button class="dark-toggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
+          <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+          <a class="login-link" href="login.html">Login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-hero" aria-labelledby="contact-heading">
+        <div class="contact-hero-content">
+          <p class="section-kicker">Contact Us</p>
+          <h1 id="contact-heading">Let's Talk Snacks</h1>
+          <p>
+            Questions about subscriptions, custom snack boxes, delivery, or party orders?
+            Send us a message and the CrunchCraze team will get back to you quickly.
+          </p>
+        </div>
+        <div class="contact-hero-image" aria-hidden="true">
+          <img src="image/a2.jpg" alt="">
+        </div>
+      </section>
+
+      <section class="contact-section" aria-label="Contact details and form">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <article class="contact-card reveal-on-scroll">
+              <span class="contact-icon" aria-hidden="true">&#128205;</span>
+              <h2>Visit Us</h2>
+              <p>Madurai, Tamil Nadu, India</p>
+            </article>
+
+            <article class="contact-card reveal-on-scroll">
+              <span class="contact-icon" aria-hidden="true">&#128231;</span>
+              <h2>Email</h2>
+              <p><a href="mailto:support@crinchcraze.com">support@crinchcraze.com</a></p>
+            </article>
+
+            <article class="contact-card reveal-on-scroll">
+              <span class="contact-icon" aria-hidden="true">&#128222;</span>
+              <h2>Call</h2>
+              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+            </article>
+
+            <article class="contact-card reveal-on-scroll">
+              <span class="contact-icon" aria-hidden="true">&#128338;</span>
+              <h2>Hours</h2>
+              <p>Mon - Sat : 9:00 AM - 7:00 PM</p>
+            </article>
+
+            <article class="contact-card reveal-on-scroll">
+              <span class="contact-icon" aria-hidden="true">&#128172;</span>
+              <h2>WhatsApp</h2>
+              <p><a href="https://wa.me/919876543210">Chat for quick snack support</a></p>
+            </article>
+
+            <article class="contact-card reveal-on-scroll">
+              <span class="contact-icon" aria-hidden="true">&#127873;</span>
+              <h2>Bulk Orders</h2>
+              <p>Party boxes, office treats, and custom event hampers.</p>
+            </article>
+          </div>
+
+          <form class="contact-form reveal-on-scroll">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name">
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Your email">
+            </div>
+            <div class="form-row">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text" placeholder="Subscription help">
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" rows="6" placeholder="Tell us what you need..."></textarea>
+            </div>
+            <button class="button primary" type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="map-section" aria-labelledby="map-heading">
+        <div class="section-header reveal-on-scroll">
+          <p class="section-kicker">Find Us</p>
+          <h2 id="map-heading">CrunchCraze Location</h2>
+        </div>
+        <div class="map-frame reveal-on-scroll">
+          <iframe
+            title="Map showing Madurai, Tamil Nadu, India"
+            src="https://maps.google.com/maps?q=Madurai%2C%20Tamil%20Nadu%2C%20India&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </section>
+    </main>
+  </div>
+<footer>
+      <div class="footer-main">
+        <section>
+          <img class="footer-logo" src="image/logo.png" alt="Crinch Craze logo">
+          <h2 class="footer-brand">Crinch Craze</h2>
+          <p class="footer-tagline">Customize. Subscribe. Snack Happier.</p>
+          <p>
+            Discover delicious popcorn, gourmet snacks, and personalized snack boxes delivered right to your doorstep.
+            Enjoy fresh flavors, flexible subscriptions, and a premium snacking experience.
+          </p>
+        </section>
+
+        <section>
+          <h2>Quick Links</h2>
+          <ul class="footer-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="build-your-box.html">Build Your Box</a></li>
+            <li><a href="subscription-plans.html">Subscription Plans</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Categories</h2>
+          <ul class="footer-list">
+            <li><a href="#">🍿 Popcorn</a></li>
+            <li><a href="#">🍪 Cookies</a></li>
+            <li><a href="#">🍫 Chocolates</a></li>
+            <li><a href="#">🥜 Nuts</a></li>
+            <li><a href="#">🥨 Chips</a></li>
+            <li><a href="#">🌽 Healthy Snacks</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Customer Support</h2>
+          <ul class="footer-list">
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Contact Us</h2>
+          <span class="support-line">📍 Madurai, Tamil Nadu, India</span>
+          <span class="support-line">📧 support@crinchcraze.com</span>
+          <span class="support-line">📞 +91 98765 43210</span>
+          <span class="support-line">🕒 Mon - Sat : 9:00 AM - 7:00 PM</span>
+
+          <h2>Newsletter</h2>
+          <p>Stay Updated! Get exclusive offers, new snack launches, and monthly subscription discounts.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email Address" aria-label="Email Address">
+            <button type="submit">Subscribe</button>
+          </form>
+
+          <h2>Follow Us</h2>
+          <ul class="social-list">
+            <li><a href="#" aria-label="Facebook"><span class="social-icon">f</span></a></li>
+            <li><a href="#" aria-label="Instagram"><span class="social-icon camera-icon"></span></a></li>
+            <li><a href="#" aria-label="X Twitter"><span class="social-icon">X</span></a></li>
+            <li><a href="#" aria-label="Pinterest"><span class="social-icon">P</span></a></li>
+            <li><a href="#" aria-label="YouTube"><span class="social-icon play-icon"></span></a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Crinch Craze. All Rights Reserved.</span>
+        <span>Designed with ❤️ for Snack Lovers.</span>
+      </div>
+    </footer>
+  </div>
+
+<a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+  <script src="js/script.js"></script>
+</body>
+</html>

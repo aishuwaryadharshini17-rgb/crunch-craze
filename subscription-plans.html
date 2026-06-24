@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Plans | Crinch Craze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="image/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page" id="top">
+    <header>
+      <div class="brand" aria-label="Crinch Craze logo">
+        <img class="logo" src="image/logo.png" alt="Crinch Craze logo">
+        <div class="brand-text">
+          <div class="brand-name">Crunch Craze</div>
+          <div class="brand-tag">Specialty popcorn & snack boxes</div>
+        </div>
+      </div>
+      <div class="header-controls">
+        <button class="dark-toggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
+        <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+        <a class="login-link" href="login.html">Login</a>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="main-nav" aria-label="Main navigation">
+        <div class="dropdown">
+          <span class="menu-toggle">Home <span class="chevron" aria-hidden="true"></span></span>
+          <div class="submenu">
+            <a href="index.html">Home 1</a>
+            <a href="home2.html">Home 2</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+        <a href="build-your-box.html">Build Your Box</a>
+        <a href="subscription-plans.html" aria-current="page">Subscription Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+        <div class="nav-actions" aria-label="Quick controls">
+          <button class="dark-toggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
+          <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+          <a class="login-link" href="login.html">Login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="subscription-plans" id="plans" aria-labelledby="plans-heading">
+        <div class="subscription-hero-panel reveal-on-scroll">
+          <div class="subscription-hero-copy">
+            <p class="section-kicker">CrunchCraze Subscription Plans</p>
+            <h2 id="plans-heading">Choose a snack box for every mood.</h2>
+            <p>
+              Pick a monthly plan, preview the box, and switch whenever your cravings change.
+              Every plan includes fresh packing, doorstep delivery, and surprise snack moments.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="#plan-quiz">Find My Plan</a>
+              <a class="button" href="#all-plans">View Plans</a>
+            </div>
+          </div>
+
+          <div class="subscription-image-grid" aria-label="Snack subscription gallery">
+            <img class="sub-grid-large" src="image/c10.jpg" alt="Movie night popcorn subscription box">
+            <img src="image/c11.jpg" alt="Cheese popcorn">
+            <img src="image/c12.jpg" alt="Chocolate cookies">
+            <img class="sub-grid-wide" src="image/c16.jpg" alt="Mixed nuts snack selection">
+            <img src="image/c14.jpg" alt="Nacho snack flavor">
+            <img class="sub-grid-wide" src="image/c15.jpg" alt="Brownie bites snack box">
+          </div>
+        </div>
+
+        <div class="plan-quiz reveal-on-scroll" id="plan-quiz" aria-labelledby="quiz-heading">
+          <div class="quiz-copy">
+            <p class="section-kicker">&#127919; Find Your Perfect Plan</p>
+            <h3 id="quiz-heading">What's your snacking style?</h3>
+            <p>Choose one mood and CrunchCraze will recommend a box instantly.</p>
+            <div class="quiz-options" role="group" aria-label="Choose your snacking style">
+              <button class="quiz-option is-selected" type="button" data-plan="Movie Night Box" data-text="Cinema popcorn, chocolates, cookies, chips, and one monthly surprise for cozy screen time." data-image="image/a4.png">&#127871; Movie Nights</button>
+              <button class="quiz-option" type="button" data-plan="Fitness Fuel Box" data-text="Dry fruits, granola, protein snacks, trail mix, and roasted nuts for active snackers." data-image="image/a6.png">&#128170; Healthy Lifestyle</button>
+              <button class="quiz-option" type="button" data-plan="Family Feast Box" data-text="Large sharing packs, cookies, chocolates, chips, mixed nuts, and a family surprise snack." data-image="image/a7.png">&#128106; Family Sharing</button>
+              <button class="quiz-option" type="button" data-plan="Party Celebration Box" data-text="A big celebration mix with 30+ snack packs, candies, gourmet popcorn, and party favorites." data-image="image/a10.jpg">&#127881; Party Time</button>
+            </div>
+          </div>
+
+          <article class="quiz-result" aria-live="polite">
+            <span class="recommended-label">Recommended Plan</span>
+            <img id="plan-result-image" src="image/c17.jpg" alt="Recommended snack subscription box">
+            <h3 id="plan-result-title">Movie Night Box</h3>
+            <p id="plan-result-text">Cinema popcorn, chocolates, cookies, chips, and one monthly surprise for cozy screen time.</p>
+            <a class="button primary" href="#plan-2">Choose This Plan</a>
+          </article>
+        </div>
+
+        <div class="section-header reveal-on-scroll" id="all-plans">
+          <p class="section-kicker">Choose Your Box</p>
+          <h2>&#127871; Subscription Plans</h2>
+        </div>
+
+        <div class="plan-slider-shell">
+          <a class="plan-slide-control plan-slide-prev" href="#plan-1" aria-label="Previous subscription plan">&#8592;</a>
+          <a class="plan-slide-control plan-slide-next" href="#plan-6" aria-label="Next subscription plan">&#8594;</a>
+
+          <div class="plan-cards" aria-label="Swipe subscription plans">
+            <article class="plan-card reveal-on-scroll" id="plan-1">
+              <div class="plan-visual starter-plan" aria-hidden="true"><span>&#129353;</span></div>
+              <div class="plan-body">
+                <h3>Snack Starter Box</h3>
+                <p class="plan-tagline">Perfect for first-time snack lovers</p>
+                <div class="plan-price">&#8377;499 <span>/ Month</span></div>
+                <ul>
+                  <li>&#127871; 5 Premium Snacks</li>
+                  <li>&#127873; 1 Surprise Snack</li>
+                  <li>&#128666; Free Delivery</li>
+                  <li>&#128230; Monthly Delivery</li>
+                </ul>
+                <p class="best-for"><strong>Best For:</strong> Students &amp; Individuals</p>
+                <a class="button primary" href="login.html">Start Snacking</a>
+              </div>
+            </article>
+
+            <article class="plan-card premium-plan-card reveal-on-scroll" id="plan-2">
+              <div class="popular-badge">&#11088; Most Popular</div>
+              <div class="plan-visual premium-plan" aria-hidden="true"><span>&#129352;</span></div>
+              <div class="plan-body">
+                <h3>Movie Night Box</h3>
+                <p class="plan-tagline">Enjoy every movie with delicious snacks</p>
+                <div class="plan-price">&#8377;899 <span>/ Month</span></div>
+                <ul>
+                  <li>&#127871; Popcorn</li>
+                  <li>&#127851; Chocolates</li>
+                  <li>&#127850; Cookies</li>
+                  <li>&#129380; Chips</li>
+                  <li>&#127873; Monthly Surprise Gift</li>
+                </ul>
+                <p class="best-for"><strong>Best For:</strong> Couples &amp; Movie Lovers</p>
+                <a class="button primary" href="login.html">Choose Plan</a>
+              </div>
+            </article>
+
+            <article class="plan-card reveal-on-scroll" id="plan-3">
+              <div class="plan-visual fitness-plan" aria-hidden="true"><span>&#129351;</span></div>
+              <div class="plan-body">
+                <h3>Fitness Fuel Box</h3>
+                <p class="plan-tagline">Healthy snacks for an active lifestyle</p>
+                <div class="plan-price">&#8377;1199 <span>/ Month</span></div>
+                <ul>
+                  <li>&#129372; Dry Fruits</li>
+                  <li>&#127806; Granola</li>
+                  <li>&#128170; Protein Snacks</li>
+                  <li>&#129379; Trail Mix</li>
+                  <li>&#129372; Mixed Nuts</li>
+                </ul>
+                <p class="best-for"><strong>Best For:</strong> Fitness Enthusiasts</p>
+                <a class="button primary" href="login.html">Eat Healthy</a>
+              </div>
+            </article>
+
+            <article class="plan-card reveal-on-scroll" id="plan-4">
+              <div class="plan-visual family-plan" aria-hidden="true"><span>&#128106;</span></div>
+              <div class="plan-body">
+                <h3>Family Feast Box</h3>
+                <p class="plan-tagline">Perfect for sharing with everyone</p>
+                <div class="plan-price">&#8377;1699 <span>/ Month</span></div>
+                <ul>
+                  <li>&#127871; Large Popcorn Packs</li>
+                  <li>&#127850; Cookies</li>
+                  <li>&#127851; Chocolates</li>
+                  <li>&#129364; Chips</li>
+                  <li>&#127873; Family Surprise Snack</li>
+                </ul>
+                <p class="best-for"><strong>Best For:</strong> Families</p>
+                <a class="button primary" href="login.html">Order Now</a>
+              </div>
+            </article>
+
+            <article class="plan-card reveal-on-scroll" id="plan-5">
+              <div class="plan-visual party-plan" aria-hidden="true"><span>&#127881;</span></div>
+              <div class="plan-body">
+                <h3>Party Celebration Box</h3>
+                <p class="plan-tagline">Perfect for birthdays, parties &amp; events</p>
+                <div class="plan-price">&#8377;2499 <span>/ Month</span></div>
+                <ul>
+                  <li>&#127880; 30+ Snack Packs</li>
+                  <li>&#127871; Gourmet Popcorn</li>
+                  <li>&#127851; Premium Chocolates</li>
+                  <li>&#127852; Candies</li>
+                  <li>&#127850; Cookies</li>
+                </ul>
+                <p class="best-for"><strong>Best For:</strong> Parties &amp; Gatherings</p>
+                <a class="button primary" href="login.html">Celebrate Now</a>
+              </div>
+            </article>
+
+            <article class="plan-card surprise-plan-card reveal-on-scroll" id="plan-6">
+              <div class="plan-visual surprise-plan" aria-hidden="true"><span>&#127873;</span></div>
+              <div class="plan-body">
+                <h3>Surprise Me Box</h3>
+                <p class="plan-tagline">You don't know what snacks arrive until the box opens.</p>
+                <div class="plan-price">&#8377;999 <span>/ Month</span></div>
+                <ul>
+                  <li>&#127922; Mystery Snack Selection</li>
+                  <li>&#127757; Limited Edition Snacks</li>
+                  <li>&#127873; Exclusive Gifts</li>
+                  <li>&#11088; Seasonal Flavors</li>
+                </ul>
+                <p class="best-for"><strong>Best For:</strong> Adventure Snack Lovers</p>
+                <a class="button primary" href="#surprise-box">Reveal My Surprise</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="subscription-feature-grid">
+          <section class="snack-calendar reveal-on-scroll" aria-labelledby="calendar-heading">
+            <div>
+              <p class="section-kicker">&#128197; Snack Calendar</p>
+              <h3 id="calendar-heading">Your delivery schedule</h3>
+            </div>
+            <div class="calendar-track">
+              <span><strong>July</strong> &#10004; Delivered</span>
+              <span><strong>August</strong> &#128666; On the Way</span>
+              <span><strong>September</strong> &#128230; Scheduled</span>
+              <span><strong>October</strong> &#9203; Upcoming</span>
+            </div>
+            <a class="button primary" href="track-delivery.html">Manage Delivery</a>
+          </section>
+
+          <section class="monthly-box reveal-on-scroll" id="monthly-box" aria-labelledby="monthly-heading">
+            <div>
+              <p class="section-kicker">&#127873; What's Inside This Month?</p>
+              <h3 id="monthly-heading">July Surprise Box</h3>
+            </div>
+            <div class="box-preview">
+              <img src="image/a9.jpg" alt="Caramel popcorn in the monthly snack box">
+              <ul>
+                <li>&#127871; Cheese Popcorn</li>
+                <li>&#127851; Chocolate Bar</li>
+                <li>&#127850; Cookies</li>
+                <li>&#129372; Almonds</li>
+                <li>&#127873; Secret Snack</li>
+              </ul>
+            </div>
+            <a class="button primary" href="snack-box.html">Preview This Month's Box</a>
+          </section>
+        </div>
+
+        <section class="member-perks reveal-on-scroll" aria-labelledby="perks-heading">
+          <div class="perks-heading-block">
+            <div>
+              <p class="section-kicker">&#11088; Member Perks</p>
+              <h2 id="perks-heading">Rewards get better as you snack</h2>
+            </div>
+            <a class="button" href="rewards.html">View Rewards</a>
+          </div>
+
+          <div class="perk-grid">
+            <article class="perk-card bronze-tier">
+              <span>Bronze</span>
+              <h3>Free Gifts</h3>
+              <p>Monthly surprise add-ons for starter members.</p>
+              <div class="perk-meter"><i></i></div>
+              <ul>
+                <li>Gift sample</li>
+                <li>Free delivery badge</li>
+              </ul>
+            </article>
+            <article class="perk-card silver-tier">
+              <span>Silver</span>
+              <h3>Discounts</h3>
+              <p>Member-only savings on extra snacks and boxes.</p>
+              <div class="perk-meter"><i></i></div>
+              <ul>
+                <li>5% add-on savings</li>
+                <li>Priority refill picks</li>
+              </ul>
+            </article>
+            <article class="perk-card gold-tier">
+              <span>Gold</span>
+              <h3>Early Access</h3>
+              <p>Try limited flavors before everyone else.</p>
+              <div class="perk-meter"><i></i></div>
+              <ul>
+                <li>New flavor previews</li>
+                <li>Double reward points</li>
+              </ul>
+            </article>
+            <article class="perk-card diamond-tier">
+              <span>Diamond</span>
+              <h3>Birthday Rewards</h3>
+              <p>Special treats and premium gifts during birthday month.</p>
+              <div class="perk-meter"><i></i></div>
+              <ul>
+                <li>Premium birthday box</li>
+                <li>VIP limited drops</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="surprise-box-panel reveal-on-scroll" id="surprise-box" aria-labelledby="surprise-heading">
+          <div>
+            <p class="section-kicker">&#127922; Surprise Me Box</p>
+            <h2 id="surprise-heading">A mystery subscription for brave snackers.</h2>
+            <p>Every month arrives as a sealed surprise with limited flavors, hidden treats, and one snack chosen by the CrunchCraze team.</p>
+            <a class="button primary" href="login.html">Reveal My Surprise</a>
+          </div>
+          <div class="surprise-stack" aria-label="Mystery snack box images">
+            <img src="image/a14.jpg" alt="Brownie bites mystery snack">
+            <img src="image/a10.jpg" alt="BBQ chips mystery snack">
+            <img src="image/a5.png" alt="Sweet treat mystery box">
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+<footer>
+      <div class="footer-main">
+        <section>
+          <img class="footer-logo" src="image/logo.png" alt="Crinch Craze logo">
+          <h2 class="footer-brand">Crinch Craze</h2>
+          <p class="footer-tagline">Customize. Subscribe. Snack Happier.</p>
+          <p>
+            Discover delicious popcorn, gourmet snacks, and personalized snack boxes delivered right to your doorstep.
+            Enjoy fresh flavors, flexible subscriptions, and a premium snacking experience.
+          </p>
+        </section>
+
+        <section>
+          <h2>Quick Links</h2>
+          <ul class="footer-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="build-your-box.html">Build Your Box</a></li>
+            <li><a href="subscription-plans.html">Subscription Plans</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Categories</h2>
+          <ul class="footer-list">
+            <li><a href="#">🍿 Popcorn</a></li>
+            <li><a href="#">🍪 Cookies</a></li>
+            <li><a href="#">🍫 Chocolates</a></li>
+            <li><a href="#">🥜 Nuts</a></li>
+            <li><a href="#">🥨 Chips</a></li>
+            <li><a href="#">🌽 Healthy Snacks</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Customer Support</h2>
+          <ul class="footer-list">
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Contact Us</h2>
+          <span class="support-line">📍 Madurai, Tamil Nadu, India</span>
+          <span class="support-line">📧 support@crinchcraze.com</span>
+          <span class="support-line">📞 +91 98765 43210</span>
+          <span class="support-line">🕒 Mon - Sat : 9:00 AM - 7:00 PM</span>
+
+          <h2>Newsletter</h2>
+          <p>Stay Updated! Get exclusive offers, new snack launches, and monthly subscription discounts.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email Address" aria-label="Email Address">
+            <button type="submit">Subscribe</button>
+          </form>
+
+          <h2>Follow Us</h2>
+          <ul class="social-list">
+            <li><a href="#" aria-label="Facebook"><span class="social-icon">f</span></a></li>
+            <li><a href="#" aria-label="Instagram"><span class="social-icon camera-icon"></span></a></li>
+            <li><a href="#" aria-label="X Twitter"><span class="social-icon">X</span></a></li>
+            <li><a href="#" aria-label="Pinterest"><span class="social-icon">P</span></a></li>
+            <li><a href="#" aria-label="YouTube"><span class="social-icon play-icon"></span></a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Crinch Craze. All Rights Reserved.</span>
+        <span>Designed with ❤️ for Snack Lovers.</span>
+      </div>
+    </footer>
+  </div>
+
+<a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+  <script src="js/script.js"></script>
+</body>
+</html>
