@@ -24,10 +24,14 @@ if (needsPageControls) {
 
   const dashboardActions = document.querySelector(".dashboard-actions");
   const dashboardProfile = document.querySelector(".dashboard-topbar .profile-chip");
+  const dashboardMenuForTools = document.querySelector(".dashboard-menu");
   const loginCard = document.querySelector(".login-card");
   const loginBrand = document.querySelector(".login-brand");
 
-  if (dashboardActions) {
+  if (dashboardMenuForTools) {
+    pageTools.classList.add("dashboard-menu-tools");
+    dashboardMenuForTools.appendChild(pageTools);
+  } else if (dashboardActions) {
     pageTools.classList.add("dashboard-topbar-tools");
     dashboardActions.insertBefore(pageTools, dashboardActions.querySelector(".profile-chip"));
   } else if (dashboardProfile) {
@@ -47,6 +51,8 @@ if (needsPageControls) {
 
 const navToggle = document.querySelector(".nav-toggle");
 const mainNav = document.querySelector("#main-nav");
+const dashboardMenuToggle = document.querySelector(".dashboard-menu-toggle");
+const dashboardMenu = document.querySelector(".dashboard-menu");
 const rtlToggles = document.querySelectorAll(".rtl-toggle");
 const darkToggles = document.querySelectorAll(".dark-toggle");
 const revealItems = document.querySelectorAll(".reveal-on-scroll");
@@ -68,6 +74,43 @@ if (navToggle && mainNav) {
     const isOpen = mainNav.classList.toggle("is-open");
     navToggle.classList.toggle("is-open", isOpen);
     navToggle.setAttribute("aria-expanded", isOpen);
+  });
+}
+
+if (dashboardMenuToggle && dashboardMenu) {
+  document.body.classList.add("dashboard-menu-ready");
+
+  const closeDashboardMenu = () => {
+    dashboardMenu.classList.remove("is-open");
+    dashboardMenuToggle.classList.remove("is-open");
+    dashboardMenuToggle.setAttribute("aria-expanded", "false");
+    dashboardMenuToggle.setAttribute("aria-label", "Open dashboard menu");
+  };
+
+  dashboardMenuToggle.addEventListener("click", () => {
+    const isOpen = dashboardMenu.classList.toggle("is-open");
+    dashboardMenuToggle.classList.toggle("is-open", isOpen);
+    dashboardMenuToggle.setAttribute("aria-expanded", isOpen);
+    dashboardMenuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close dashboard menu" : "Open dashboard menu"
+    );
+  });
+
+  dashboardMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeDashboardMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDashboardMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1080) {
+      closeDashboardMenu();
+    }
   });
 }
 
