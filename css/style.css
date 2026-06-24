@@ -169,6 +169,7 @@
 
     .dashboard-sidebar .page-tools {
       width: 100%;
+      grid-column: 1 / -1;
       justify-content: center;
       margin: -6px 0 2px;
       padding: 10px;
@@ -6392,6 +6393,42 @@
       font-weight: 800;
     }
 
+    .dashboard-menu-toggle {
+      display: none;
+      width: 46px;
+      height: 42px;
+      place-items: center;
+      gap: 5px;
+      flex: 0 0 auto;
+      border: 1px solid rgba(255, 179, 71, 0.45);
+      border-radius: 8px;
+      color: #2B1B17;
+      background: linear-gradient(135deg, #FFB347, #ff7900);
+      box-shadow: 0 12px 24px rgba(255, 121, 0, 0.24);
+      cursor: pointer;
+    }
+
+    .dashboard-menu-toggle span {
+      width: 20px;
+      height: 2px;
+      display: block;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .dashboard-menu-toggle.is-open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .dashboard-menu-toggle.is-open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .dashboard-menu-toggle.is-open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
     .dashboard-menu::-webkit-scrollbar {
       width: 8px;
     }
@@ -8224,12 +8261,19 @@
     @media (max-width: 1080px) {
       .dashboard-shell {
         grid-template-columns: 1fr;
+        grid-template-areas:
+          "sidebar"
+          "main";
         background: #fffaf5;
       }
 
       .dashboard-sidebar {
         position: relative;
         height: auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
         padding: 18px;
       }
 
@@ -8238,11 +8282,16 @@
         margin-bottom: 10px;
       }
 
+      .dashboard-menu-toggle {
+        display: inline-grid;
+      }
+
       .dashboard-logo .brand-tag {
         white-space: normal;
       }
 
       .dashboard-menu {
+        grid-column: 1 / -1;
         flex: none;
         max-height: none;
         overflow: visible;
@@ -8250,8 +8299,17 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
+      body.dashboard-menu-ready .dashboard-menu {
+        display: none;
+      }
+
+      body.dashboard-menu-ready .dashboard-menu.is-open {
+        display: grid;
+      }
+
       .dashboard-menu a {
         min-height: 44px;
+        width: 100%;
       }
 
       .dashboard-stats {
