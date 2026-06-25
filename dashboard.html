@@ -6,14 +6,14 @@
   <title>Dashboard | Crunch Craze</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="image/logo.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="dashboard-body">
   <div class="dashboard-shell">
     <aside class="dashboard-sidebar" aria-label="Dashboard navigation">
-      <a class="dashboard-logo" href="index.html" aria-label="Crunch Craze home">
+      <a class="brand dashboard-logo" href="index.html" aria-label="Crunch Craze home">
         <img class="logo" src="image/logo.png" alt="Crunch Craze logo">
         <div class="brand-text">
           <div class="brand-name">Crunch Craze</div>
@@ -34,7 +34,6 @@
         <a href="address-book.html"><span>A</span> Address Book</a>
         <a href="notifications.html"><span>N</span> Notifications <strong>3</strong></a>
         <a href="settings.html"><span>G</span> Settings</a>
-        <a href="login.html"><span>L</span> Logout</a>
       </nav>
 
     </aside>
@@ -42,13 +41,16 @@
     <main class="dashboard-main">
       <header class="dashboard-topbar">
         <div>
-          <h1>Welcome back <span aria-hidden="true">&#128075;</span></h1>
+          <h1>Welcome back <i class="cc-icon cc-icon-users" aria-hidden="true"></i></h1>
           <p>We're excited to snack with you again.</p>
         </div>
 
         <div class="dashboard-actions">
-          <button type="button">&#9906; Delivery Address</button>
-          <button class="notification-button" type="button" aria-label="Notifications">&#9671;<span>3</span></button>
+          <button type="button"><i class="cc-icon cc-icon-map-pin" aria-hidden="true"></i> Delivery Address</button>
+          <div class="page-tools" aria-label="Page display tools">
+            <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+          </div>
+          <button class="notification-button" type="button" aria-label="Notifications"><i class="cc-icon cc-icon-message" aria-hidden="true"></i><span>3</span></button>
           <div class="profile-chip">
             <span class="profile-icon" aria-hidden="true">A</span>
             <strong>Aishwarya</strong>
@@ -67,7 +69,7 @@
               <div class="delivery-step is-done"><span>&#10003;</span><strong>Packed</strong><small>23 June</small></div>
               <div class="delivery-step is-done"><span>&#10003;</span><strong>Shipped</strong><small>24 June</small></div>
               <div class="delivery-step is-current"><span>&#9632;</span><strong>Out for Delivery</strong><small>26 June</small></div>
-              <div class="delivery-step"><span>&#9679;</span><strong>Delivered</strong><small>28 June</small></div>
+              <div class="delivery-step"><strong>Delivered</strong><small>28 June</small></div>
             </div>
           </div>
           <aside class="delivery-note">
@@ -140,7 +142,7 @@
 
         <article class="dashboard-panel rewards-panel" id="rewards-wallet">
           <h2>Rewards Wallet</h2>
-          <div class="reward-ring"><span>&#127873;</span></div>
+          <div class="reward-ring"><i class="cc-icon cc-icon-gift" aria-hidden="true"></i></div>
           <strong>2,450</strong>
           <p>Current Points</p>
           <small>2,550 points to unlock next reward: Free Snack Box</small>
@@ -197,10 +199,10 @@
             <a href="#">View All</a>
           </div>
           <div class="achievement-row">
-            <span>&#9733;<small>Snack Explorer</small></span>
-            <span>&#10022;<small>Crunch Lover</small></span>
-            <span>&#9733;<small>Premium Member</small></span>
-            <span class="locked">&#9678;<small>Snack Legend</small></span>
+            <span><i class="cc-icon cc-icon-star" aria-hidden="true"></i><small>Snack Explorer</small></span>
+            <span><i class="cc-icon cc-icon-heart" aria-hidden="true"></i><small>Crunch Lover</small></span>
+            <span><i class="cc-icon cc-icon-star" aria-hidden="true"></i><small>Premium Member</small></span>
+            <span class="locked"><i class="cc-icon cc-icon-star" aria-hidden="true"></i><small>Snack Legend</small></span>
           </div>
         </article>
 
