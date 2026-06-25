@@ -116,8 +116,11 @@
     }
 
     .brand-text {
-      display: grid;
-      gap: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4px;
       min-width: 0;
     }
 
@@ -125,7 +128,7 @@
       font-family: var(--font-logo);
       font-size: clamp(16px, 1.6vw, 22px);
       font-weight: 900;
-      line-height: 1.05;
+      line-height: 1.1;
       color: #7c2d12;
       letter-spacing: 0;
       white-space: normal;
@@ -6648,10 +6651,10 @@
     .footer-brand-lockup {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       width: min(100%, 380px);
       margin: 0 0 14px;
-      color: #fff7ed;
+      color: #FFFFFF;
       text-decoration: none;
       cursor: pointer;
     }
@@ -6661,22 +6664,24 @@
     }
 
     .footer-brand-lockup .logo {
-      width: 72px;
-      height: 62px;
+      width: 60px;
+      height: 52px;
       flex: 0 0 auto;
       object-fit: contain;
     }
 
     .footer-brand-lockup .brand-name {
       color: #FF9800;
-      font-size: clamp(16px, 1.6vw, 22px);
+      font-size: clamp(18px, 1.8vw, 24px);
+      font-weight: 900;
+      line-height: 1.05;
     }
 
     .footer-brand-lockup .brand-tag {
       color: #F4EBD0;
       font-size: 12px;
       max-width: 220px;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
     .footer-tagline {
