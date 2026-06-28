@@ -355,7 +355,7 @@ const dashboardMenuToggle = document.querySelector(".dashboard-menu-toggle");
 const dashboardMenu = document.querySelector(".dashboard-menu");
 const rtlToggles = document.querySelectorAll(".rtl-toggle");
 const darkToggles = document.querySelectorAll(".dark-toggle");
-const addSiteRevealAnimations = () => {};
+const addSiteRevealAnimations = () => { };
 
 const revealItems = document.querySelectorAll(".reveal-on-scroll");
 const planCards = document.querySelector(".plan-cards");
@@ -493,10 +493,21 @@ if (darkToggles.length) {
 
 if (planCards && planPrev && planNext) {
   const slidePlans = (direction) => {
-    const firstCard = planCards.querySelector(".plan-card");
-    const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 320;
-    planCards.scrollBy({
-      left: direction * (cardWidth + 22),
+    const cards = Array.from(planCards.querySelectorAll(".plan-card"));
+    const visibleCount = window.matchMedia("(min-width: 1101px)").matches ? 3 : 1;
+    const currentIndex = cards.reduce((closestIndex, card, index) => {
+      const currentDistance = Math.abs(card.offsetLeft - planCards.scrollLeft);
+      const closestDistance = Math.abs(cards[closestIndex].offsetLeft - planCards.scrollLeft);
+      return currentDistance < closestDistance ? index : closestIndex;
+    }, 0);
+    const maxStartIndex = Math.max(0, cards.length - visibleCount);
+    const nextIndex = Math.min(
+      maxStartIndex,
+      Math.max(0, currentIndex + direction * visibleCount)
+    );
+
+    planCards.scrollTo({
+      left: cards[nextIndex] ? cards[nextIndex].offsetLeft : 0,
       behavior: "smooth"
     });
   };
@@ -608,3 +619,90 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+/*====================================
+    NOTIFICATION POPUP
+====================================*/
+
+const notificationBtn = document.getElementById("notificationBtn");
+const notificationPopup = document.getElementById("notificationPopup");
+const markReadBtn = document.querySelector(".mark-read-btn");
+const badge = document.querySelector(".notification-badge");
+
+if (notificationBtn && notificationPopup) {
+
+  // Open / Close popup
+  notificationBtn.addEventListener("click", function (e) {
+
+    e.stopPropagation();
+
+    notificationPopup.classList.toggle("active");
+
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", function () {
+
+    notificationPopup.classList.remove("active");
+
+  });
+
+  // Prevent popup from closing when clicked inside
+  notificationPopup.addEventListener("click", function (e) {
+
+    e.stopPropagation();
+
+  });
+
+}
+
+/* Mark all as read */
+
+if (markReadBtn) {
+
+  markReadBtn.addEventListener("click", function () {
+
+    document.querySelectorAll(".notification-item.unread").forEach(item => {
+
+      item.classList.remove("unread");
+
+    });
+
+    if (badge) {
+
+      badge.textContent = "0";
+      badge.style.display = "none";
+
+    }
+
+  });
+
+}
+
+/* Click notification */
+
+document.querySelectorAll(".notification-item").forEach(item => {
+
+  item.addEventListener("click", function () {
+
+    this.classList.remove("unread");
+
+    const unread = document.querySelectorAll(".notification-item.unread").length;
+
+    if (badge) {
+
+      if (unread > 0) {
+
+        badge.textContent = unread;
+
+      } else {
+
+        badge.style.display = "none";
+
+      }
+
+    }
+
+  });
+
+});
