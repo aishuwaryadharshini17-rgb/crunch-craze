@@ -12080,3 +12080,138 @@ body.dark-mode [class*="hero"] .section-kicker {
   margin-top: 18px !important;
   color: #FF9800 !important;
 }
+
+/* Prevent header overlap after larger menu text */
+@media (min-width: 1101px) and (max-width: 1320px) {
+  header {
+    gap: 14px !important;
+    padding-left: clamp(18px, 3vw, 38px) !important;
+    padding-right: clamp(18px, 3vw, 38px) !important;
+  }
+
+  header .brand {
+    max-width: 300px !important;
+    gap: 10px !important;
+  }
+
+  header .logo {
+    width: 60px !important;
+    height: 52px !important;
+  }
+
+  header .brand-name {
+    font-size: 19px !important;
+  }
+
+  header .brand-tag {
+    font-size: 11px !important;
+  }
+
+  header nav {
+    gap: 8px !important;
+    font-size: 16px !important;
+  }
+
+  header nav a,
+  header .menu-toggle {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  header {
+    min-height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    padding: 10px 14px !important;
+  }
+
+  header .brand,
+  [dir="rtl"] header .brand {
+    order: 1 !important;
+    flex: 1 1 auto !important;
+    width: auto !important;
+    max-width: calc(100% - 52px) !important;
+    margin: 0 auto 0 0 !important;
+    direction: ltr !important;
+    justify-content: flex-start !important;
+  }
+
+  header .logo {
+    width: 48px !important;
+    height: 42px !important;
+  }
+
+  header .brand-text {
+    max-width: 170px !important;
+  }
+
+  header .brand-name {
+    font-size: clamp(13px, 1.8vw, 16px) !important;
+    line-height: 1 !important;
+  }
+
+  header .brand-tag {
+    max-width: 170px !important;
+    font-size: clamp(7px, 1.1vw, 10px) !important;
+    line-height: 1.15 !important;
+  }
+
+  header .header-controls,
+  [dir="rtl"] header .header-controls {
+    order: 2 !important;
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    justify-content: flex-end !important;
+  }
+
+  header .header-controls > :not(.nav-toggle) {
+    display: none !important;
+  }
+
+  header .nav-toggle {
+    width: 36px !important;
+    height: 36px !important;
+    display: inline-grid !important;
+    padding: 0 !important;
+  }
+
+  header nav,
+  [dir="rtl"] header nav {
+    order: 3 !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+    max-height: calc(100vh - 90px) !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    overflow-y: auto !important;
+    padding: 10px !important;
+    border: 1px solid rgba(255, 179, 71, 0.44) !important;
+    border-radius: 8px !important;
+    background: rgba(255, 251, 245, 0.98) !important;
+    box-shadow: 0 18px 38px rgba(43, 27, 23, 0.16) !important;
+    direction: ltr !important;
+  }
+
+  header nav.is-open {
+    display: flex !important;
+  }
+
+  header nav a,
+  header .menu-toggle {
+    width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  body.dark-mode header nav {
+    background: rgba(15, 23, 42, 0.98) !important;
+  }
+}
