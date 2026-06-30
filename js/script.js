@@ -56,11 +56,25 @@ if (isDashboardPage) {
   const dashboardMenuForTools = document.querySelector(".dashboard-menu");
   const topbarTools = document.querySelector(".dashboard-topbar .page-tools");
 
-  if (topbarTools && dashboardMenuForTools) {
-    topbarTools.remove();
+  if (topbarTools) {
+    if (!topbarTools.querySelector(".dark-toggle")) {
+      topbarTools.insertAdjacentHTML(
+        "beforeend",
+        `<button class="dark-toggle" type="button" aria-label="Switch to dark mode">${ccIcon("moon")}</button>`
+      );
+    }
+  } else if (dashboardActions) {
+    const pageTools = document.createElement("div");
+    pageTools.className = "page-tools dashboard-topbar-tools";
+    pageTools.setAttribute("aria-label", "Page display controls");
+    pageTools.innerHTML = `
+      <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+      <button class="dark-toggle" type="button" aria-label="Switch to dark mode">${ccIcon("moon")}</button>
+    `;
+    dashboardActions.insertBefore(pageTools, dashboardActions.querySelector(".notification-wrapper"));
   }
 
-  if (dashboardMenuForTools && !dashboardMenuForTools.querySelector(".dashboard-menu-tools")) {
+  if (!topbarTools && !dashboardActions && dashboardMenuForTools && !dashboardMenuForTools.querySelector(".dashboard-menu-tools")) {
     const menuTools = document.createElement("div");
     menuTools.className = "dashboard-menu-tools";
     menuTools.setAttribute("aria-label", "Dashboard display controls");
@@ -706,3 +720,4 @@ document.querySelectorAll(".notification-item").forEach(item => {
   });
 
 });
+
