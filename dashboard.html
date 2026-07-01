@@ -35,6 +35,10 @@
         <a href="track-delivery.html"><i class="cc-icon cc-icon-truck" aria-hidden="true"></i> Track Delivery</a>
         <a href="payments.html"><i class="cc-icon cc-icon-credit-card" aria-hidden="true"></i> Payments</a>
         <a href="address-book.html"><i class="cc-icon cc-icon-map-pin" aria-hidden="true"></i> Address Book</a>
+        <a href="#" class="logout-link" onclick="openLogoutModal(); return false;">
+          <i class="cc-icon cc-icon-logout"></i>
+          Logout
+        </a>
       </nav>
 
     </aside>
@@ -51,24 +55,35 @@
         </div>
 
         <div class="dashboard-topbar-right dashboard-actions">
+
           <div class="page-tools" aria-label="Page display tools">
-            <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
-          </div>
 
-          <div class="notification-wrapper">
-            <button class="notification-btn" id="notificationBtn">
-              <i class="cc-icon cc-icon-message"></i>
-              <span class="notification-badge">5</span>
+            <button class="rtl-toggle" type="button">
+              RTL
             </button>
+
+            <button class="dark-toggle" type="button">
+              <i class="cc-icon cc-icon-moon"></i>
+            </button>
+
+            <div class="notification-wrapper">
+              <button class="notification-btn" id="notificationBtn">
+                <i class="cc-icon cc-icon-message"></i>
+                <span class="notification-badge">5</span>
+              </button>
+            </div>
+
+            <a href="settings.html" class="topbar-icon">
+              <i class="cc-icon cc-icon-settings"></i>
+            </a>
+
           </div>
 
-          <a href="settings.html" class="topbar-icon">
-            <i class="cc-icon cc-icon-settings"></i>
-          </a>
           <div class="profile-chip">
             <img src="image/profile.jpg" alt="Aishwarya" class="profile-avatar">
             <strong>Aishwarya</strong>
           </div>
+
         </div>
       </header>
 
@@ -221,11 +236,22 @@
               <div class="delivery-step"><strong>Delivered</strong><small>28 June</small></div>
             </div>
           </div>
-          <aside class="delivery-note">
-            <strong>Arriving Soon</strong>
-            <span>Expected between 9:00 AM and 12:00 PM.</span>
-            <small>Courier: Crunch Express</small>
-            <a href="#">Track live</a>
+          <aside class="track-box">
+
+            <h3 class="track-title">Arriving Soon</h3>
+
+            <p class="track-text">
+              Expected between 9:00 AM and 12:00 PM.
+            </p>
+
+            <span class="track-courier">
+              Courier: Crunch Express
+            </span>
+
+            <a href="#" class="track-btn">
+              Track Live
+            </a>
+
           </aside>
         </article>
 
@@ -430,6 +456,33 @@
       window.addEventListener('resize', function () { if (window.innerWidth > 820) { sidebar.classList.remove('expanded'); toggle.classList.remove('is-open'); if (overlay) overlay.style.display = ''; } });
     })();
   </script>
+
+  <div class="logout-modal" id="logoutModal">
+
+    <div class="logout-modal-box">
+
+      <i class="cc-icon cc-icon-logout logout-modal-icon"></i>
+
+      <h2>Logout?</h2>
+
+      <p>Are you sure you want to logout from your account?</p>
+
+      <div class="logout-modal-actions">
+
+        <button class="cancel-btn" onclick="closeLogoutModal()">
+          No
+        </button>
+
+        <button class="logout-btn" onclick="logoutNow()">
+          Yes
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
 
 </html>
