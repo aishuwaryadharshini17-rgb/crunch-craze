@@ -721,3 +721,20 @@ document.querySelectorAll(".notification-item").forEach(item => {
 
 });
 
+function openLogoutModal() {
+
+  document.getElementById("logoutModal").classList.add("active");
+
+}
+
+function closeLogoutModal() {
+
+  document.getElementById("logoutModal").classList.remove("active");
+
+}
+
+function logoutNow() {
+
+  window.location.href = "login.html";
+
+}
