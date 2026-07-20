@@ -790,15 +790,20 @@ nav a,
 }
 
 nav a:hover {
-  background: var(--brand-soft);
-  transform: translateY(-2px);
+  color: var(--brand);
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  transform: none;
 }
 
 .dropdown:hover .menu-toggle,
 .dropdown:focus-within .menu-toggle {
-  background: var(--brand-soft);
-  color: #000;
-  transform: translateY(-2px);
+  color: var(--brand);
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  transform: none;
 }
 
 nav a[aria-current="page"] {
@@ -819,8 +824,11 @@ nav a[aria-current="page"]::after {
 }
 
 nav a[aria-current="page"]:hover {
-  color: var(--brand-dark);
-  background: var(--brand-soft);
+  color: var(--brand);
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  transform: none;
 }
 
 .nav-actions {
@@ -13045,18 +13053,6 @@ body.dark-mode [class*="hero"] .section-kicker {
   color: #FF9800 !important;
 }
 
-/* Public site header: screenshot-style alignment without overlap */
-[dir="rtl"] body:not(.dashboard-body):not(.login-only-page)>.page>header .header-controls {
-  order: 2;
-  margin-inline-start: 0;
-  margin-inline-end: auto;
-  justify-content: flex-start;
-}
-
-[dir="rtl"] body:not(.dashboard-body):not(.login-only-page)>.page>header nav {
-  order: 3;
-}
-
 @media (min-width: 1101px) {
   body:not(.dashboard-body):not(.login-only-page)>.page>header {
     display: flex;
@@ -16146,7 +16142,6 @@ body:not(.dark-mode) .mission-card p,
 body:not(.dark-mode) .value-card p,
 body:not(.dark-mode) .team-card p,
 body:not(.dark-mode) .story-content p,
-body:not(.dark-mode) .about-hero-content>p:not(.section-kicker),
 body:not(.dark-mode) .home2-hero-content p {
   color: #374151 !important;
   font-weight: 400 !important;
@@ -16222,8 +16217,11 @@ body:not(.dashboard-body):not(.login-only-page)>.page>header nav a[aria-current=
 body:not(.dashboard-body):not(.login-only-page)>.page>header nav a:hover,
 body:not(.dashboard-body):not(.login-only-page)>.page>header .dropdown:hover .menu-toggle,
 body:not(.dashboard-body):not(.login-only-page)>.page>header .dropdown:focus-within .menu-toggle {
-  color: #111827 !important;
-  background: #fff3dc !important;
+  color: var(--brand) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  transform: none !important;
 }
 
 body:not(.dashboard-body):not(.login-only-page)>.page>header .chevron {
@@ -17361,17 +17359,17 @@ body.dark-mode:not(.dashboard-body):not(.login-only-page)>.page>header nav a[ari
 body.dark-mode:not(.dashboard-body):not(.login-only-page)>.page>header nav a:hover,
 body.dark-mode:not(.dashboard-body):not(.login-only-page)>.page>header .dropdown:hover .menu-toggle,
 body.dark-mode:not(.dashboard-body):not(.login-only-page)>.page>header .dropdown:focus-within .menu-toggle {
-  color: #2B1B17 !important;
-  background: #FFB347 !important;
+  color: #FFB347 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  transform: none !important;
 }
 
 body.dark-mode:not(.dashboard-body):not(.login-only-page)>.page>header nav a[aria-current="page"]::after {
   background: #FFB347 !important;
 }
 
-body.dark-mode:not(.dashboard-body):not(.login-only-page)>.page>header .brand-tag {
-  color: #f8dec0 !important;
-}
 
 /* Build Your Box alignment and card control visibility. */
 .builder-category-grid {
@@ -24195,4 +24193,18 @@ body {
 [dir="rtl"] .dropdown .submenu {
   left: auto;
   right: 0;
+}
+
+/* Hero paragraph typography consistency */
+:is(.hero p:not(.hero-kicker), .home2-hero-content > p:not(.section-kicker), .about-hero-content > p:not(.section-kicker), .contact-hero p, .builder-hero-copy > p:not(.section-kicker), .subscription-hero-copy p) {
+  max-width: 660px !important;
+  margin-top: 18px !important;
+  font-size: clamp(17px, 2vw, 22px) !important;
+  font-weight: 300 !important;
+  line-height: 1.55 !important;
+}
+
+.about-hero-content > p:not(.section-kicker),
+body.dark-mode .about-hero-content > p:not(.section-kicker) {
+  color: #fff7ed !important;
 }
