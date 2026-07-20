@@ -8,7 +8,12 @@ if (savedTheme === "dark") {
   document.body.classList.add("dark-mode");
 }
 
-document.documentElement.dir = savedDirection === "rtl" ? "rtl" : "ltr";
+const setDocumentDirection = (direction) => {
+  document.documentElement.dir = direction;
+  document.body.dir = direction;
+};
+
+setDocumentDirection(savedDirection === "rtl" ? "rtl" : "ltr");
 
 const ensureBackToTop = () => {
   if (!document.querySelector("#top")) {
@@ -478,7 +483,7 @@ if (rtlToggles.length) {
 
   rtlToggles.forEach((rtlToggle) => rtlToggle.addEventListener("click", () => {
     const nextDirection = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
-    document.documentElement.dir = nextDirection;
+    setDocumentDirection(nextDirection);
     localStorage.setItem("crinchDirection", nextDirection);
     syncDirectionToggles();
   }));
@@ -738,3 +743,21 @@ function logoutNow() {
   window.location.href = "login.html";
 
 }
+
+/* ===== Mobile Dropdown ===== */
+
+document.querySelectorAll(".dropdown .menu-toggle").forEach((toggle) => {
+
+    toggle.addEventListener("click", function (e) {
+
+        if (window.innerWidth > 1100) return;
+
+        e.preventDefault();
+
+        const dropdown = this.parentElement;
+
+        dropdown.classList.toggle("active");
+
+    });
+
+});
