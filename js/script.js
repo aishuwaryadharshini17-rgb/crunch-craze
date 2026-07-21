@@ -16,18 +16,37 @@ const setDocumentDirection = (direction) => {
 setDocumentDirection(savedDirection === "rtl" ? "rtl" : "ltr");
 
 const ensureBackToTop = () => {
+  if (
+    document.body.classList.contains("dashboard-body") ||
+    document.body.classList.contains("login-only-page") ||
+    document.body.classList.contains("signin-auth-page") ||
+    document.body.classList.contains("login-auth-page")
+  ) {
+    return;
+  }
+
   if (!document.querySelector("#top")) {
     document.body.id = "top";
   }
 
-  if (!document.querySelector(".back-to-top")) {
-    const backToTop = document.createElement("a");
+  let backToTop = document.querySelector(".back-to-top");
+  if (!backToTop) {
+    backToTop = document.createElement("a");
     backToTop.className = "back-to-top";
     backToTop.href = "#top";
     backToTop.setAttribute("aria-label", "Back to top");
     backToTop.textContent = "\u2191";
     document.body.appendChild(backToTop);
   }
+
+  // Scroll listener to toggle visibility class
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("visible");
+    } else {
+      backToTop.classList.remove("visible");
+    }
+  });
 };
 
 const addAuthLinks = () => {
