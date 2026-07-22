@@ -969,17 +969,23 @@ button { font-family: inherit; color: inherit; cursor: pointer; border: none; ba
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   padding: 14px 16px;
   background: var(--surface-2);
   border-radius: 10px;
   border: 1px solid var(--border-soft);
   margin-top: 12px;
 }
+.toggle-row > div {
+  flex: 1;
+  min-width: 0;
+}
 .toggle-label { font-size: 14px; font-weight: 600; }
-.toggle-desc  { font-size: 12px; color: var(--muted); }
+.toggle-desc  { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
 .toggle-switch {
   position: relative;
-  width: 42px; height: 24px;
+  width: 44px; height: 24px;
+  flex-shrink: 0;
 }
 .toggle-switch input { display: none; }
 .toggle-slider {
@@ -1598,7 +1604,7 @@ button { font-family: inherit; color: inherit; cursor: pointer; border: none; ba
   }
   .db-sidebar.open { transform: translateX(0); }
   .db-main { margin-left: 0; }
-  .db-page { padding: 20px 18px; }
+  .db-page { padding: 20px 24px; }
 }
 
 @media (max-width: 768px) {
@@ -1613,9 +1619,9 @@ button { font-family: inherit; color: inherit; cursor: pointer; border: none; ba
   .profile-chip-info,
   .profile-chip-arrow { display: none !important; }
   .profile-chip { padding: 3px !important; border-radius: 50% !important; }
-  .db-topbar { padding: 0 12px; }
-  .db-page { padding: 12px 8px; }
-  .card-body { padding: 12px 8px; }
+  .db-topbar { padding: 0 16px; }
+  .db-page { padding: 16px 16px; }
+  .card-body { padding: 14px 14px; }
   .rh-right { min-width: 0; width: 100%; }
   .table-wrap {
     width: 100%;
@@ -1643,12 +1649,13 @@ button { font-family: inherit; color: inherit; cursor: pointer; border: none; ba
 }
 
 @media (max-width: 480px) {
+  .db-topbar { padding: 0 12px; }
   .db-brand img {
     width: 90px;
     height: 32px;
   }
-  .db-page { padding: 8px 4px; }
-  .card-body { padding: 8px 4px; }
+  .db-page { padding: 12px 14px; }
+  .card-body { padding: 12px 10px; }
   .db-table { font-size: 9px; }
   .db-table th {
     font-size: 8px;
@@ -1661,6 +1668,22 @@ button { font-family: inherit; color: inherit; cursor: pointer; border: none; ba
   .badge i { font-size: 7px; }
   .btn-xs { padding: 2px 4px; font-size: 8px; }
   .metrics-grid { grid-template-columns: 1fr; }
+  .metric-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .mc-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .mc-value {
+    font-size: 18px;
+  }
+  .mc-label {
+    font-size: 10px;
+  }
   .page-hd { flex-direction: column; align-items: flex-start; }
   .db-brand-name { display: none; }
 }
