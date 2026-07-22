@@ -15901,8 +15901,8 @@ body:not(.dashboard-body):not(.login-only-page)>.page>header .logo,
 
 
   body:not(.dashboard-body):not(.login-only-page)>.page>header .logo {
-    width: 64px !important;
-    height: 56px !important;
+    width: 118px !important;
+        height: 63px !important;
     flex: 0 0 64px !important;
   }
 
@@ -15986,8 +15986,9 @@ body:not(.dashboard-body):not(.login-only-page)>.page>header .logo,
   }
 
   body:not(.dashboard-body):not(.login-only-page)>.page>header .logo {
-    width: 58px !important;
-    height: 50px !important;
+    width: 118px !important;
+        height: 63px !important;
+
     flex-basis: 58px !important;
   }
 
@@ -17953,53 +17954,56 @@ body.dark-mode:not(.dashboard-body):not(.login-only-page)>.page>header .submenu 
   color: #111827 !important;
 }
 
-.login-only-page .login-card h1,
+/* Login and Auth Card typography & colors */
 body:not(.dark-mode).login-only-page .login-card h1,
-body.dark-mode.login-only-page .login-card h1 {
-  color: #ffffff !important;
+body:not(.dark-mode) .auth-card h1,
+.login-only-page:not(.dark-mode) .login-card h1 {
+  color: #2B1B17 !important;
 }
 
-.login-only-page .login-options,
-.login-only-page .remember-option span,
-.login-only-page .auth-divider,
-.login-only-page .signup-note,
-body.dark-mode.login-only-page .login-options,
-body.dark-mode.login-only-page .remember-option span,
-body.dark-mode.login-only-page .auth-divider,
-body.dark-mode.login-only-page .signup-note {
-  color: #f8fafc !important;
+body.dark-mode.login-only-page .login-card h1,
+body.dark-mode .auth-card h1 {
+  color: #fff7ed !important;
 }
 
-.login-only-page .login-brand .brand-name,
-body.dark-mode.login-only-page .login-brand .brand-name {
-  color: #ffffff !important;
+body:not(.dark-mode).login-only-page :is(.auth-subtitle, .remember-option span, .auth-divider, .signup-note) {
+  color: #4b5563 !important;
 }
 
-.login-only-page .login-brand .brand-tag,
-body.dark-mode.login-only-page .login-brand .brand-tag {
-  color: #fed7aa !important;
+body.dark-mode.login-only-page :is(.auth-subtitle, .remember-option span, .auth-divider, .signup-note) {
+  color: #f3f4f6 !important;
+}
+
+body:not(.dark-mode).login-only-page :is(.login-options a, .signup-note a) {
+  color: #d97706 !important;
+}
+
+body.dark-mode.login-only-page :is(.login-options a, .signup-note a) {
+  color: #fbbf24 !important;
 }
 
 .login-only-page .signin-form input[type="text"],
 .login-only-page .signin-form input[type="email"],
-.login-only-page .signin-form input[type="password"],
-body.dark-mode.login-only-page .signin-form input[type="text"],
-body.dark-mode.login-only-page .signin-form input[type="email"],
-body.dark-mode.login-only-page .signin-form input[type="password"] {
+.login-only-page .signin-form input[type="password"] {
   color: #111827 !important;
   background: #ffffff !important;
 }
 
-.login-only-page .signin-form input::placeholder,
-body.dark-mode.login-only-page .signin-form input::placeholder {
-  color: #6b7280 !important;
+body.dark-mode.login-only-page .signin-form input[type="text"],
+body.dark-mode.login-only-page .signin-form input[type="email"],
+body.dark-mode.login-only-page .signin-form input[type="password"] {
+  color: #ffffff !important;
+  background: #1f2937 !important;
+  border-color: #374151 !important;
 }
 
-.login-only-page .signin-form .button,
-.login-only-page .signin-form .button *,
-body.dark-mode.login-only-page .signin-form .button,
-body.dark-mode.login-only-page .signin-form .button * {
-  color: #111827 !important;
+.login-only-page .signin-form input::placeholder {
+  color: #9ca3af !important;
+}
+
+.login-only-page .signin-form .button.primary,
+.login-only-page .signin-form .button.primary * {
+  color: #ffffff !important;
 }
 
 /* Dark mode: make every main reading surface high-contrast. */
@@ -19507,7 +19511,7 @@ body.dark-mode .subscription-plans .quiz-option.is-selected {
 
 body.dark-mode .about-sustainability .section-kicker,
 body.dark-mode .about-sustainability .section-kicker * {
-  color: #111827 !important;
+  color: #FFB347 !important;
   text-shadow: none !important;
 }
 
@@ -19551,12 +19555,12 @@ html body.dark-mode a.plan-slide-control.plan-slide-next {
 }
 
 html body.dark-mode .about-sustainability .sustainability-content>p.section-kicker {
-  color: #111827 !important;
+  color: #FFB347 !important;
   text-shadow: none !important;
 }
 
 html body.dark-mode .about-vision .vision-panel>p.section-kicker {
-  color: #111827 !important;
+  color: #FFB347 !important;
   text-shadow: none !important;
 }
 
@@ -22264,11 +22268,26 @@ body.dark-mode .profile-chip {
   text-wrap: balance;
 }
 
-.hero .hero-content p:not(.hero-kicker) {
-  font-size: 1.08rem !important;
+.hero .hero-content p:not(.hero-kicker),
+.hero-content p:not(.hero-kicker),
+.builder-hero-copy p:not(.section-kicker),
+.subscription-hero-copy p:not(.section-kicker),
+.about-hero-content p:not(.section-kicker),
+.contact-hero-content p:not(.section-kicker) {
+  font-size: clamp(1.1rem, 1.8vw, 1.2rem) !important;
   font-weight: 400 !important;
-  line-height: 1.8 !important;
-  max-width: 560px !important;
+  line-height: 1.6 !important;
+  max-width: 640px !important;
+  color: #3b2316 !important;
+}
+
+body.dark-mode .hero .hero-content p:not(.hero-kicker),
+body.dark-mode .hero-content p:not(.hero-kicker),
+body.dark-mode .builder-hero-copy p:not(.section-kicker),
+body.dark-mode .subscription-hero-copy p:not(.section-kicker),
+body.dark-mode .about-hero-content p:not(.section-kicker),
+body.dark-mode .contact-hero-content p:not(.section-kicker) {
+  color: #fff7ed !important;
 }
 
 /*=========================================================
@@ -26007,5 +26026,308 @@ html body:not(.dashboard-body) .page#top {
     padding-top: 80px !important;
   }
 }
+
+/* ==================================================
+   ICON COLOR AND DISPLAY FIXES FOR BUTTONS & LINKS
+================================================== */
+
+.button,
+.luxury-btn,
+.view-items-btn,
+.quiz-option,
+.auth-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+/* Ensure button icons inherit exact button text color without background shapes */
+.button .cc-icon,
+.luxury-btn .cc-icon,
+.view-items-btn .cc-icon,
+.quiz-option .cc-icon,
+.auth-link .cc-icon,
+.button i,
+.luxury-btn i {
+  color: inherit !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+}
+
+.button .cc-icon::before,
+.luxury-btn .cc-icon::before,
+.view-items-btn .cc-icon::before,
+.quiz-option .cc-icon::before,
+.auth-link .cc-icon::before,
+.button i::before,
+.luxury-btn i::before {
+  background: currentColor !important;
+  -webkit-mask: var(--cc-icon) center / contain no-repeat !important;
+  mask: var(--cc-icon) center / contain no-repeat !important;
+}
+
+/* Ensure secondary buttons (light background) show dark icons */
+.button:not(.primary) .cc-icon,
+.luxury-btn-secondary .cc-icon,
+.button:not(.primary) i,
+.luxury-btn-secondary i {
+  color: var(--ink) !important;
+}
+
+/* On hover of secondary buttons, icon matches hover text color */
+.button:not(.primary):hover .cc-icon,
+.luxury-btn-secondary:hover .cc-icon,
+.button:not(.primary):hover i,
+.luxury-btn-secondary:hover i {
+  color: var(--brand-dark) !important;
+}
+
+/* Primary buttons (dark/orange background) show crisp white icons */
+.button.primary .cc-icon,
+.luxury-btn-primary .cc-icon,
+.button.primary i,
+.luxury-btn-primary i {
+  color: #FFFFFF !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.button.primary .cc-icon::before,
+.luxury-btn-primary .cc-icon::before,
+.button.primary i::before,
+.luxury-btn-primary i::before {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  -webkit-mask: var(--cc-icon) center / contain no-repeat !important;
+  mask: var(--cc-icon) center / contain no-repeat !important;
+}
+
+/* Additional Icon Class Aliases & Fallbacks */
+.cc-icon-box {
+  --cc-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21 8-9-5-9 5 9 5 9-5Z'/%3E%3Cpath d='M3 8v8l9 5 9-5V8'/%3E%3Cpath d='M12 13v8'/%3E%3C/svg%3E");
+}
+
+.cc-icon-add,
+.cc-icon-plus {
+  --cc-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14'/%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+}
+
+/* ==================================================
+   FEATURE BOX CENTER ALIGNMENT
+================================================== */
+.feature-box {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 24px 20px !important;
+  gap: 8px !important;
+}
+
+.feature-box > div {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.feature-box i,
+.feature-box .cc-icon {
+  font-size: 28px !important;
+  color: #FF9800 !important;
+  margin: 0 0 6px 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.feature-box h4 {
+  text-align: center !important;
+  margin: 0 0 6px 0 !important;
+  width: 100% !important;
+}
+
+.feature-box p {
+  text-align: center !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+/* ==================================================
+   SECTION KICKER & SUSTAINABILITY TEXT COLOR FIX
+================================================== */
+
+.section-kicker,
+p.section-kicker {
+  color: #FF9800 !important;
+}
+
+body.dark-mode .section-kicker,
+body.dark-mode p.section-kicker,
+html body.dark-mode .section-kicker,
+html body.dark-mode p.section-kicker,
+html body.dark-mode .about-sustainability .section-kicker,
+html body.dark-mode .about-sustainability .sustainability-content > p.section-kicker,
+html body.dark-mode .about-vision .section-kicker,
+html body.dark-mode .about-vision .vision-panel > p.section-kicker {
+  color: #FFB347 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+html body.dark-mode .about-sustainability p:not(.section-kicker) {
+  color: #e5d5c5 !important;
+}
+
+html body.dark-mode .about-sustainability h2#sustainability-heading,
+html body.dark-mode .about-sustainability h2 {
+  color: #ffffff !important;
+}
+
+/* ==================================================
+   BOX PREVIEW & CARD LIST PADDING FIX
+================================================== */
+.box-preview ul,
+.summary-box-preview ul,
+.monthly-box .box-preview ul {
+  padding-left: 18px !important;
+  padding-right: 16px !important;
+  margin: 14px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.box-preview li,
+.summary-box-preview li,
+.monthly-box .box-preview li {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  gap: 10px !important;
+}
+
+@media (max-width: 768px) {
+  .monthly-box,
+  .snack-calendar,
+  .box-preview,
+  .summary-box-preview {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .box-preview ul,
+  .summary-box-preview ul {
+    padding-left: 20px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ==================================================
+   EXPAND SURPRISE ME BOX CARD TO FIT ALL STACKED IMAGES
+================================================== */
+.surprise-box-panel {
+  padding-bottom: clamp(48px, 6vw, 72px) !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 480px) {
+  .surprise-box-panel {
+    grid-template-columns: 1fr !important;
+    padding: clamp(28px, 5vw, 42px) clamp(20px, 4vw, 36px) clamp(60px, 8vw, 85px) !important;
+    gap: 28px !important;
+  }
+
+  .surprise-stack {
+    position: relative !important;
+    min-height: 420px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 15px auto 25px !important;
+  }
+
+  .surprise-stack img {
+    width: min(82%, 270px) !important;
+    height: 185px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .surprise-stack img:nth-child(1) {
+    top: 0 !important;
+    left: 4% !important;
+    transform: rotate(-6deg) !important;
+    z-index: 1 !important;
+  }
+
+  .surprise-stack img:nth-child(2) {
+    top: 90px !important;
+    left: 16% !important;
+    transform: rotate(2deg) !important;
+    z-index: 2 !important;
+  }
+
+  .surprise-stack img:nth-child(3) {
+    top: 180px !important;
+    left: 8% !important;
+    transform: rotate(-4deg) !important;
+    z-index: 3 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .surprise-box-panel {
+    padding-bottom: 75px !important;
+  }
+
+  .surprise-stack {
+    min-height: 380px !important;
+    max-width: 310px !important;
+    margin: 10px auto 20px !important;
+  }
+
+  .surprise-stack img {
+    width: 86% !important;
+    height: 165px !important;
+  }
+
+  .surprise-stack img:nth-child(1) {
+    top: 0 !important;
+    left: 2% !important;
+  }
+
+  .surprise-stack img:nth-child(2) {
+    top: 75px !important;
+    left: 12% !important;
+  }
+
+  .surprise-stack img:nth-child(3) {
+    top: 150px !important;
+    left: 6% !important;
+  }
+}
+
+
+
+
+
 
 
