@@ -198,10 +198,6 @@
 
     <!-- Sidebar Footer -->
     <div class="sidebar-footer">
-      <a href="index.html" class="nav-item" style="color: var(--muted); font-size:13px;">
-        <i class="fa-solid fa-house nav-icon"></i>
-        <span class="nav-label">Back to Site</span>
-      </a>
       <button class="nav-item" id="sidebarLogoutBtn" style="width:100%; text-align:left; color:var(--red);">
         <i class="fa-solid fa-right-from-bracket nav-icon" style="color:var(--red);"></i>
         <span class="nav-label">Logout</span>
@@ -361,7 +357,6 @@
                   <th>Contents</th>
                   <th>Amount</th>
                   <th>Status</th>
-                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -371,7 +366,6 @@
                   <td>July Gourmet Box (5 snacks)</td>
                   <td>₹999.00</td>
                   <td><span class="badge badge-orange"><i class="fa-solid fa-truck"></i> In Transit</span></td>
-                  <td><button class="btn btn-outline btn-xs" onclick="navigate('track')">Track</button></td>
                 </tr>
                 <tr>
                   <td><strong>#CC-7611</strong></td>
@@ -379,7 +373,6 @@
                   <td>June Gourmet Box (5 snacks)</td>
                   <td>₹999.00</td>
                   <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
-                  <td><button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-7611')">Invoice</button></td>
                 </tr>
                 <tr>
                   <td><strong>#CC-6204</strong></td>
@@ -387,7 +380,6 @@
                   <td>May Gourmet Box (5 snacks)</td>
                   <td>₹999.00</td>
                   <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
-                  <td><button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-6204')">Invoice</button></td>
                 </tr>
               </tbody>
             </table>
@@ -530,7 +522,7 @@
       </div>
 
       <!-- Summary Metrics -->
-      <div class="metrics-grid mb-24" style="grid-template-columns: repeat(4,1fr);">
+      <div class="metrics-grid mb-24">
         <div class="metric-card mc-green">
           <div class="mc-icon bg-green"><i class="fa-solid fa-box-archive"></i></div>
           <div class="mc-body">
@@ -591,7 +583,6 @@
                   <th>Amount</th>
                   <th>Payment</th>
                   <th>Status</th>
-                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -603,8 +594,6 @@
                   <td><i class="fa-solid fa-qrcode text-muted"></i> UPI</td>
                   <td><span class="badge badge-orange"><i class="fa-solid fa-truck"></i> In Transit</span></td>
                   <td><div class="action-btns">
-                    <button class="btn btn-outline btn-xs" onclick="navigate('track')">Track</button>
-                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-8942')">Invoice</button>
                   </div></td>
                 </tr>
                 <tr data-status="delivered">
@@ -615,8 +604,6 @@
                   <td><i class="fa-solid fa-credit-card text-muted"></i> Visa ****4242</td>
                   <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
                   <td><div class="action-btns">
-                    <button class="btn btn-outline btn-xs">Reorder</button>
-                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-7611')">Invoice</button>
                   </div></td>
                 </tr>
                 <tr data-status="delivered">
@@ -627,8 +614,6 @@
                   <td><i class="fa-solid fa-credit-card text-muted"></i> Visa ****4242</td>
                   <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
                   <td><div class="action-btns">
-                    <button class="btn btn-outline btn-xs">Reorder</button>
-                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-6204')">Invoice</button>
                   </div></td>
                 </tr>
                 <tr data-status="delivered">
@@ -639,8 +624,6 @@
                   <td><i class="fa-solid fa-credit-card text-muted"></i> Visa ****4242</td>
                   <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
                   <td><div class="action-btns">
-                    <button class="btn btn-outline btn-xs">Reorder</button>
-                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-5198')">Invoice</button>
                   </div></td>
                 </tr>
                 <tr data-status="delivered">
@@ -651,8 +634,6 @@
                   <td><i class="fa-solid fa-credit-card text-muted"></i> MasterCard ****8819</td>
                   <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
                   <td><div class="action-btns">
-                    <button class="btn btn-outline btn-xs">Reorder</button>
-                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-4322')">Invoice</button>
                   </div></td>
                 </tr>
                 <tr data-status="cancelled">
@@ -663,7 +644,6 @@
                   <td><i class="fa-solid fa-rotate-left text-muted"></i> Refunded</td>
                   <td><span class="badge badge-red"><i class="fa-solid fa-xmark"></i> Cancelled</span></td>
                   <td><div class="action-btns">
-                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-3870')">Details</button>
                   </div></td>
                 </tr>
               </tbody>
