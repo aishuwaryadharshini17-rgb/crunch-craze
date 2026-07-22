@@ -1,484 +1,1684 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | Crunch Craze</title>
+  <title>User Dashboard | Crunch Craze</title>
+  <meta name="description" content="Manage your Crunch Craze subscription, snack box, rewards, deliveries and account settings.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="icon" type="image/png" href="image/logo.png">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- *** ONLY dashboard.css — no site style.css *** -->
+  <link rel="stylesheet" href="css/dashboard.css">
 </head>
-
-<body class="dashboard-body">
-  <div class="dashboard-shell">
-    <aside class="dashboard-sidebar" aria-label="Dashboard navigation">
-      <a class="dashboard-logo" href="index.html" aria-label="Crunch Craze home"><img class="logo" src="image/logo.png"
-          alt="Crunch Craze logo">
-      </a>
-
-      <button class="dashboard-menu-toggle" type="button" aria-controls="dashboard-menu" aria-expanded="false"
-        aria-label="Open dashboard menu"><span></span><span></span><span></span></button>
-      <nav class="dashboard-menu" id="dashboard-menu" aria-label="Account menu">
-        <a class="is-active" href="dashboard.html"><i class="cc-icon cc-icon-home" aria-hidden="true"></i> Dashboard</a>
-        <a href="subscription.html"><i class="cc-icon cc-icon-package" aria-hidden="true"></i> My Subscription</a>
-        <a href="orders.html"><i class="cc-icon cc-icon-cart" aria-hidden="true"></i> My Orders</a>
-        <a href="snack-box.html"><i class="cc-icon cc-icon-cookie" aria-hidden="true"></i> My Snack Box</a>
-        <a href="rewards.html"><i class="cc-icon cc-icon-gift" aria-hidden="true"></i> Rewards</a>
-        <a href="track-delivery.html"><i class="cc-icon cc-icon-truck" aria-hidden="true"></i> Track Delivery</a>
-        <a href="payments.html"><i class="cc-icon cc-icon-credit-card" aria-hidden="true"></i> Payments</a>
-        <a href="address-book.html"><i class="cc-icon cc-icon-map-pin" aria-hidden="true"></i> Address Book</a>
-        <a href="#" class="logout-link" onclick="openLogoutModal(); return false;">
-          <i class="cc-icon cc-icon-logout"></i>
-          Logout
-        </a>
-      </nav>
-
-    </aside>
-
-    <div class="page-overlay" aria-hidden="true"></div>
-
-    <main class="dashboard-main">
-      <header class="dashboard-topbar">
-        <div class="dashboard-topbar-left">
-          <div>
-            <h1>Welcome Back</h1>
-            <p>We're again here to snack with you.</p>
-          </div>
-        </div>
-
-        <div class="dashboard-topbar-right dashboard-actions">
-
-          <div class="page-tools" aria-label="Page display tools">
-
-            <button class="rtl-toggle" type="button">
-              RTL
-            </button>
-
-            <button class="dark-toggle" type="button">
-              <i class="cc-icon cc-icon-moon"></i>
-            </button>
-
-            <div class="notification-wrapper">
-              <button class="notification-btn" id="notificationBtn">
-                <i class="cc-icon cc-icon-message"></i>
-                <span class="notification-badge">5</span>
-              </button>
-            </div>
-
-            <a href="settings.html" class="topbar-icon">
-              <i class="cc-icon cc-icon-settings"></i>
-            </a>
-
-          </div>
-
-          <div class="profile-chip">
-            <img src="image/profile.jpg" alt="Aishwarya" class="profile-avatar">
-            <strong>Aishwarya</strong>
-          </div>
-
-        </div>
-      </header>
-
-      <div class="notification-popup" id="notificationPopup">
-
-        <div class="notification-header">
-
-          <h3>Notifications</h3>
-
-          <button class="mark-read-btn">
-
-            Mark all as read
-
-          </button>
-
-        </div>
-
-        <div class="notification-list">
-
-          <!-- Notification -->
-
-          <div class="notification-item unread">
-
-            <div class="notification-icon">
-
-              <i class="cc-icon cc-icon-package"></i>
-
-            </div>
-
-            <div class="notification-content">
-
-              <h4>Your snack box is being prepared</h4>
-
-              <p>Our team has started preparing your monthly snack box.</p>
-
-              <span>2 minutes ago</span>
-
-            </div>
-
-          </div>
-
-          <!-- Notification -->
-
-          <div class="notification-item unread">
-
-            <div class="notification-icon">
-
-              <i class="cc-icon cc-icon-truck"></i>
-
-            </div>
-
-            <div class="notification-content">
-
-              <h4>Order Packed Successfully</h4>
-
-              <p>Your order has been packed and is ready to ship.</p>
-
-              <span>Today • 10:30 AM</span>
-
-            </div>
-
-          </div>
-
-          <!-- Notification -->
-
-          <div class="notification-item">
-
-            <div class="notification-icon">
-
-              <i class="cc-icon cc-icon-truck"></i>
-
-            </div>
-
-            <div class="notification-content">
-
-              <h4>Out For Delivery</h4>
-
-              <p>Your Crunch Craze snack box is on the way.</p>
-
-              <span>Today • 08:10 AM</span>
-
-            </div>
-
-          </div>
-
-          <!-- Notification -->
-
-          <div class="notification-item">
-
-            <div class="notification-icon">
-
-              <i class="cc-icon cc-icon-gift"></i>
-
-            </div>
-
-            <div class="notification-content">
-
-              <h4>Reward Points Added</h4>
-
-              <p>50 reward points have been added to your account.</p>
-
-              <span>Yesterday</span>
-
-            </div>
-
-          </div>
-
-          <!-- Notification -->
-
-          <div class="notification-item">
-
-            <div class="notification-icon">
-
-              <i class="cc-icon cc-icon-cookie"></i>
-
-            </div>
-
-            <div class="notification-content">
-
-              <h4>New Coupon Available</h4>
-
-              <p>Use <strong>WELCOME20</strong> to save 20% today.</p>
-
-              <span>Yesterday</span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-
-      <section class="dashboard-grid">
-        <article class="dashboard-panel delivery-panel" id="delivery-tracker">
-          <div>
-            <h2>Delivery Tracker</h2>
-            <div class="delivery-progress">
-              <div class="delivery-step is-done"><span>&#10003;</span><strong>Order Confirmed</strong><small>22
-                  June</small></div>
-              <div class="delivery-step is-done"><span>&#10003;</span><strong>Packed</strong><small>23 June</small>
-              </div>
-              <div class="delivery-step is-done"><span>&#10003;</span><strong>Shipped</strong><small>24 June</small>
-              </div>
-              <div class="delivery-step is-current"><span>&#9632;</span><strong>Out for Delivery</strong><small>26
-                  June</small></div>
-              <div class="delivery-step"><strong>Delivered</strong><small>28 June</small></div>
-            </div>
-          </div>
-          <aside class="track-box">
-
-            <h3 class="track-title">Arriving Soon</h3>
-
-            <p class="track-text">
-              Expected between 9:00 AM and 12:00 PM.
-            </p>
-
-            <span class="track-courier">
-              Courier: Crunch Express
-            </span>
-
-            <a href="#" class="track-btn">
-              Track Live
-            </a>
-
-          </aside>
-        </article>
-
-        <article class="dashboard-panel quick-actions-panel">
-          <div class="panel-heading">
-            <h2>Quick Actions</h2>
-            <a href="#">Manage</a>
-          </div>
-          <div class="quick-action-grid">
-            <a href="build-your-box.html"><span>+</span><strong>Add Snacks</strong></a>
-            <a href="payments.html"><span>%</span><strong>Use Coupons</strong></a>
-            <a href="address-book.html"><span>@</span><strong>Update Address</strong></a>
-          </div>
-        </article>
-
-        <article class="dashboard-panel monthly-panel" id="monthly-box">
-          <div class="panel-heading">
-            <h2>This Month's Snack Box</h2>
-            <a href="#">View All</a>
-          </div>
-          <div class="dashboard-snack-row">
-            <figure><img src="image/a8.jpg" alt="Cheese popcorn">
-              <figcaption>Cheese Popcorn</figcaption>
-            </figure>
-            <figure><img src="image/a11.jpg" alt="Choco cookies">
-              <figcaption>Choco Cookies</figcaption>
-            </figure>
-            <figure><img src="image/a10.jpg" alt="BBQ chips">
-              <figcaption>BBQ Chips</figcaption>
-            </figure>
-            <figure><img src="image/a15.jpg" alt="Mixed nuts">
-              <figcaption>Mixed Nuts</figcaption>
-            </figure>
-            <figure><img src="image/a5.png" alt="Surprise snack">
-              <figcaption>Surprise Snack</figcaption>
-            </figure>
-          </div>
-          <a href="build-your-box.html" class="button primary">Customize Next Box</a>
-        </article>
-
-        <article class="dashboard-panel subscription-panel" id="subscription-status">
-          <h2>Subscription Status</h2>
-          <div class="subscription-card-body">
-            <img src="image/a7.png" alt="Crunch Craze subscription box">
-            <dl>
-              <dt>Current Plan</dt>
-              <dd>Movie Night Box</dd>
-              <dt>Renewal Date</dt>
-              <dd>15 July 2026</dd>
-              <dt>Status</dt>
-              <dd class="status-active">&#10003; Active</dd>
-            </dl>
-          </div>
-          <div class="subscription-actions">
-            <a class="button primary" href="subscription-plans.html">Upgrade</a>
-            <a class="button" href="#">Pause</a>
-            <a class="button danger-button" href="#">Cancel</a>
-          </div>
-        </article>
-
-        <article class="dashboard-panel recommendations-panel" id="recommended-snacks">
-          <div class="panel-heading">
-            <h2>Recommended For You</h2>
-            <a href="#">View All</a>
-          </div>
-          <div class="recommendation-grid">
-            <article><img src="image/a9.jpg" alt="Caramel popcorn"><strong>Caramel Popcorn</strong><span>&#8377;199
-                <button type="button">+</button></span></article>
-            <article><img src="image/a14.jpg" alt="Brownie bites"><strong>Brownie Bites</strong><span>&#8377;249
-                <button type="button">+</button></span></article>
-            <article><img src="image/12.jpg" alt="Trail mix"><strong>Trail Mix</strong><span>&#8377;199 <button
-                  type="button">+</button></span></article>
-            <article><img src="image/a13.jpg" alt="Nacho chips"><strong>Nacho Chips</strong><span>&#8377;149 <button
-                  type="button">+</button></span></article>
-          </div>
-        </article>
-
-        <article class="dashboard-panel rewards-panel" id="rewards-wallet">
-          <h2>Rewards Wallet</h2>
-          <div class="reward-ring"><i class="cc-icon cc-icon-gift" aria-hidden="true"></i></div>
-          <strong>2,450</strong>
-          <p>Current Points</p>
-          <small>2,550 points to unlock next reward: Free Snack Box</small>
-        </article>
-
-        <article class="dashboard-panel spending-panel">
-          <div class="panel-heading">
-            <h2>Monthly Spending</h2>
-            <span>6 Months</span>
-          </div>
-          <div class="bar-chart" aria-label="Monthly spending chart">
-            <span style="height: 58%"><small>Jan</small></span>
-            <span style="height: 82%"><small>Feb</small></span>
-            <span style="height: 68%"><small>Mar</small></span>
-            <span style="height: 36%"><small>Apr</small></span>
-            <span style="height: 56%"><small>May</small></span>
-            <span style="height: 54%"><small>Jun</small></span>
-          </div>
-        </article>
-
-        <article class="dashboard-panel offers-panel">
-          <div class="panel-heading">
-            <h2>Special Offers</h2>
-            <a href="#">View All</a>
-          </div>
-          <div class="offer-banner">
-            <div>
-              <strong>Summer Snack Fest</strong>
-              <span>Up to 25% OFF</span>
-              <a href="#" class="button primary">Shop Now</a>
-            </div>
-            <img src="image/a6.png" alt="Special snack offer">
-          </div>
-        </article>
-
-        <article class="dashboard-panel orders-panel" id="recent-orders">
-          <div class="panel-heading">
-            <h2>Recent Orders</h2>
-            <a href="#">View All</a>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Order ID</th>
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>#CC101</td>
-                <td>15 Jun 2026</td>
-                <td>&#8377;899</td>
-                <td><span class="delivered">Delivered</span></td>
-              </tr>
-              <tr>
-                <td>#CC102</td>
-                <td>25 Jun 2026</td>
-                <td>&#8377;499</td>
-                <td><span class="shipped">Shipped</span></td>
-              </tr>
-              <tr>
-                <td>#CC103</td>
-                <td>30 Jun 2026</td>
-                <td>&#8377;1,699</td>
-                <td><span class="processing">Processing</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </article>
-      </section>
-
-      <section class="spin-banner">
-        <img src="image/a4.png" alt="Snack reward box">
-        <div>
-          <h2>Spin the Wheel &amp; Win!</h2>
-          <p>Spin once a month and win exciting snack rewards.</p>
-        </div>
-        <a href="#" class="button">Shop Now &rarr;</a>
-      </section>
-    </main>
+<body class="db-body">
+
+<!-- ============================================================
+     TOP BAR
+============================================================ -->
+<header class="db-topbar">
+  <div class="topbar-left">
+    <!-- Hamburger -->
+    <button class="db-hamburger" id="dbHamburger" aria-label="Toggle sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Brand -->
+    <a href="index.html" class="db-brand" aria-label="Crunch Craze home">
+      <img src="image/logo.png" alt="Crunch Craze logo">
+    </a>
+
+    <!-- Welcome Message -->
+    <div class="db-welcome">
+      <span class="db-welcome-line1">Good morning,</span>
+      <span class="db-welcome-line2">Welcome back, <em>Alex Morgan</em>! 👋</span>
+    </div>
   </div>
 
-  <script src="js/script.js"></script>
-  <script>
-    // Sidebar toggle + overlay handling for small screens
-    (function () {
-      var toggle = document.querySelector('.dashboard-menu-toggle');
-      var sidebar = document.querySelector('.dashboard-sidebar');
-      var overlay = document.querySelector('.page-overlay');
-      var links = document.querySelectorAll('.dashboard-menu a');
-      if (!toggle || !sidebar) return;
+  <div class="topbar-right">
+    <!-- RTL / LTR Toggle -->
+    <button class="tb-icon-btn db-rtl-btn" id="dbRtlBtn" aria-label="Toggle layout direction" title="Toggle RTL/LTR Mode">
+      <i class="fa-solid fa-right-left" id="rtlIcon"></i>
+    </button>
 
-      function openSidebar() {
-        sidebar.classList.add('expanded');
-        toggle.classList.add('is-open');
-        toggle.setAttribute('aria-expanded', 'true');
-        if (overlay) overlay.style.display = 'block';
-      }
+    <!-- Dark Mode Toggle -->
+    <button class="tb-icon-btn db-theme-btn" id="dbThemeBtn" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+      <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
 
-      function closeSidebar() {
-        sidebar.classList.remove('expanded');
-        toggle.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        if (overlay) overlay.style.display = '';
-      }
+    <!-- Notifications -->
+    <div class="notif-wrapper">
+      <button class="tb-icon-btn" id="notifBtn" aria-label="Notifications" aria-expanded="false">
+        <i class="fa-regular fa-bell"></i>
+        <span class="tb-badge" id="notifBadge">3</span>
+      </button>
 
-      toggle.addEventListener('click', function () {
-        if (sidebar.classList.contains('expanded')) closeSidebar(); else openSidebar();
-      });
-
-      if (overlay) overlay.addEventListener('click', closeSidebar);
-
-      // close when a nav link is clicked (mobile)
-      links.forEach(function (a) { a.addEventListener('click', function () { if (window.innerWidth <= 820) closeSidebar(); }); });
-
-      // close on Escape
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSidebar(); });
-
-      // ensure sidebar reset when resizing to desktop
-      window.addEventListener('resize', function () { if (window.innerWidth > 820) { sidebar.classList.remove('expanded'); toggle.classList.remove('is-open'); if (overlay) overlay.style.display = ''; } });
-    })();
-  </script>
-
-  <div class="logout-modal" id="logoutModal">
-
-    <div class="logout-modal-box">
-
-      <i class="cc-icon cc-icon-logout logout-modal-icon"></i>
-
-      <h2>Logout?</h2>
-
-      <p>Are you sure you want to logout from your account?</p>
-
-      <div class="logout-modal-actions">
-
-        <button class="cancel-btn" onclick="closeLogoutModal()">
-          No
-        </button>
-
-        <button class="logout-btn" onclick="logoutNow()">
-          Yes
-        </button>
-
+      <div class="notif-dropdown" id="notifDropdown" role="dialog" aria-label="Notifications">
+        <div class="notif-hd">
+          <h4>Notifications</h4>
+          <button class="notif-mark-btn" id="markAllRead">Mark all as read</button>
+        </div>
+        <div class="notif-list">
+          <div class="notif-item unread" data-id="n1">
+            <div class="notif-ico ico-amber"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="notif-body">
+              <p class="notif-title">Shipment Dispatched!</p>
+              <p class="notif-sub">Order #CC-8942 is on its way via BlueDart.</p>
+              <span class="notif-time">2 hours ago</span>
+            </div>
+          </div>
+          <div class="notif-item unread" data-id="n2">
+            <div class="notif-ico ico-purple"><i class="fa-solid fa-star"></i></div>
+            <div class="notif-body">
+              <p class="notif-title">Reward Points Earned</p>
+              <p class="notif-sub">You earned +150 points for your July renewal.</p>
+              <span class="notif-time">1 day ago</span>
+            </div>
+          </div>
+          <div class="notif-item unread" data-id="n3">
+            <div class="notif-ico ico-green"><i class="fa-solid fa-box-open"></i></div>
+            <div class="notif-body">
+              <p class="notif-title">Snack Box Locking Soon</p>
+              <p class="notif-sub">Customize your August box before Jul 26.</p>
+              <span class="notif-time">2 days ago</span>
+            </div>
+          </div>
+          <div class="notif-item" data-id="n4">
+            <div class="notif-ico ico-blue"><i class="fa-solid fa-tag"></i></div>
+            <div class="notif-body">
+              <p class="notif-title">Special Offer!</p>
+              <p class="notif-sub">Get 20% off your next upgrade. Use: SAVE20</p>
+              <span class="notif-time">3 days ago</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <!-- Profile Chip -->
+    <div class="profile-wrapper">
+      <button class="profile-chip" id="profileChipBtn" aria-label="Account menu" aria-expanded="false">
+        <img src="image/profile.jpg" alt="Alex Morgan profile photo">
+        <div class="profile-chip-info">
+          <span class="profile-chip-name">Alex Morgan</span>
+          <span class="profile-chip-role">Gold Crazer</span>
+        </div>
+        <i class="fa-solid fa-chevron-down profile-chip-arrow" id="profileArrow"></i>
+      </button>
+
+      <div class="profile-dropdown" id="profileDropdown" role="menu">
+        <div class="pd-header">
+          <p class="pd-name">Alex Morgan</p>
+          <p class="pd-email">alex.morgan@gmail.com</p>
+          <span class="pd-tier"><i class="fa-solid fa-crown"></i> Gold Crazer</span>
+        </div>
+        <hr class="pd-sep">
+        <a href="#overview" class="pd-link nav-trigger" data-page="overview" role="menuitem">
+          <i class="fa-solid fa-chart-pie"></i> Dashboard
+        </a>
+        <a href="#subscription" class="pd-link nav-trigger" data-page="subscription" role="menuitem">
+          <i class="fa-solid fa-crown"></i> My Subscription
+        </a>
+        <a href="#address-book" class="pd-link nav-trigger" data-page="address-book" role="menuitem">
+          <i class="fa-solid fa-location-dot"></i> Address Book
+        </a>
+        <hr class="pd-sep">
+        <button class="pd-link logout" id="profileLogoutBtn" role="menuitem">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     LAYOUT WRAPPER
+============================================================ -->
+<div class="db-layout">
+
+  <!-- SIDEBAR OVERLAY (mobile) -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ============================================================
+       SIDEBAR / SIDE NAV
+  ============================================================ -->
+  <aside class="db-sidebar" id="dbSidebar" aria-label="Dashboard navigation">
+    <div class="sidebar-inner">
+
+      <div class="nav-group-label">Main</div>
+
+      <a class="nav-item active" data-page="overview" href="#overview" role="button">
+        <i class="fa-solid fa-chart-pie nav-icon"></i>
+        <span class="nav-label">Overview</span>
+      </a>
+
+      <a class="nav-item" data-page="subscription" href="#subscription" role="button">
+        <i class="fa-solid fa-crown nav-icon"></i>
+        <span class="nav-label">My Subscription</span>
+      </a>
+
+      <a class="nav-item" data-page="orders" href="#orders" role="button">
+        <i class="fa-solid fa-box-archive nav-icon"></i>
+        <span class="nav-label">My Orders</span>
+        <span class="nav-pill pill-orange">24</span>
+      </a>
+
+      <a class="nav-item" data-page="snack-box" href="#snack-box" role="button">
+        <i class="fa-solid fa-cubes nav-icon"></i>
+        <span class="nav-label">My Snack Box</span>
+      </a>
+
+      <div class="nav-group-label">Account & Services</div>
+
+      <a class="nav-item" data-page="rewards" href="#rewards" role="button">
+        <i class="fa-solid fa-medal nav-icon"></i>
+        <span class="nav-label">Rewards</span>
+        <span class="nav-pill pill-purple">1,450 pts</span>
+      </a>
+
+      <a class="nav-item" data-page="track" href="#track" role="button">
+        <i class="fa-solid fa-truck-fast nav-icon"></i>
+        <span class="nav-label">Track Delivery</span>
+        <span class="pulse-dot" title="Active delivery"></span>
+      </a>
+
+      <a class="nav-item" data-page="payments" href="#payments" role="button">
+        <i class="fa-solid fa-credit-card nav-icon"></i>
+        <span class="nav-label">Payments</span>
+      </a>
+
+      <a class="nav-item" data-page="address-book" href="#address-book" role="button">
+        <i class="fa-solid fa-map-location-dot nav-icon"></i>
+        <span class="nav-label">Address Book</span>
+      </a>
 
     </div>
 
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <a href="index.html" class="nav-item" style="color: var(--muted); font-size:13px;">
+        <i class="fa-solid fa-house nav-icon"></i>
+        <span class="nav-label">Back to Site</span>
+      </a>
+      <button class="nav-item" id="sidebarLogoutBtn" style="width:100%; text-align:left; color:var(--red);">
+        <i class="fa-solid fa-right-from-bracket nav-icon" style="color:var(--red);"></i>
+        <span class="nav-label">Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main class="db-main">
+
+    <!-- =====================================================
+         PAGE 1: OVERVIEW
+    ===================================================== -->
+    <section class="db-page active" id="page-overview">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>Dashboard Overview</h1>
+          <p>Welcome back! Here's a snapshot of your Crunch Craze account.</p>
+        </div>
+        <button class="btn btn-primary" onclick="navigate('snack-box')">
+          <i class="fa-solid fa-sliders"></i> Customize My Box
+        </button>
+      </div>
+
+      <!-- Hero Banner -->
+      <div class="overview-hero">
+        <div class="oh-left">
+          <h2>Hey Alex, your July Gourmet Box is packed! 🎉</h2>
+          <p>Your next delivery is on its way. Estimated arrival: July 28, 2026.</p>
+          <div class="oh-badges">
+            <span class="oh-badge oh-badge-gold"><i class="fa-solid fa-crown"></i> Gold Crazer</span>
+            <span class="oh-badge oh-badge-green"><i class="fa-solid fa-check-circle"></i> Active Subscription</span>
+          </div>
+        </div>
+        <div class="oh-right">
+          <p class="oh-days-label">DAYS UNTIL DELIVERY</p>
+          <p class="oh-days-num">6</p>
+          <p class="oh-days-sub">July 28, 2026</p>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card mc-amber">
+          <div class="mc-icon bg-amber"><i class="fa-solid fa-crown"></i></div>
+          <div class="mc-body">
+            <p class="mc-label">Active Plan</p>
+            <p class="mc-value">Gourmet Box</p>
+            <p class="mc-sub">₹999 / month</p>
+          </div>
+          <span class="mc-change up"><i class="fa-solid fa-check"></i> Active</span>
+        </div>
+        <div class="metric-card mc-green">
+          <div class="mc-icon bg-green"><i class="fa-solid fa-boxes-packing"></i></div>
+          <div class="mc-body">
+            <p class="mc-label">Total Boxes</p>
+            <p class="mc-value">24</p>
+            <p class="mc-sub">Since July 2024</p>
+          </div>
+          <span class="mc-change up"><i class="fa-solid fa-arrow-up"></i> +2</span>
+        </div>
+        <div class="metric-card mc-purple">
+          <div class="mc-icon bg-purple"><i class="fa-solid fa-star"></i></div>
+          <div class="mc-body">
+            <p class="mc-label">Reward Points</p>
+            <p class="mc-value">1,450</p>
+            <p class="mc-sub">≈ ₹145 Value</p>
+          </div>
+          <span class="mc-change up"><i class="fa-solid fa-arrow-up"></i> +150</span>
+        </div>
+        <div class="metric-card mc-blue">
+          <div class="mc-icon bg-blue"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <div class="mc-body">
+            <p class="mc-label">Next Delivery</p>
+            <p class="mc-value">Jul 28</p>
+            <p class="mc-sub">6 days away</p>
+          </div>
+          <span class="mc-change up"><i class="fa-solid fa-clock"></i> On time</span>
+        </div>
+      </div>
+
+      <!-- Two column row -->
+      <div class="grid-2 mb-24">
+        <!-- Snack Box Preview -->
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><i class="fa-solid fa-box-open"></i> July Box Preview</p>
+            <p class="text-sm text-muted mb-16">5 of 5 slots filled · Locked for packing</p>
+            <div class="ov-snack-preview">
+              <span class="ov-snack-chip"><img src="image/a1.jpg" alt="Popcorn"> Truffle Popcorn</span>
+              <span class="ov-snack-chip"><img src="image/a2.jpg" alt="Makhana"> Spicy Makhana</span>
+              <span class="ov-snack-chip"><img src="image/a3.jpg" alt="Pretzels"> Cheese Pretzels</span>
+              <span class="ov-snack-chip"><img src="image/a4.jpg" alt="Almonds"> Dark Almonds</span>
+              <span class="ov-snack-chip"><img src="image/a8.jpg" alt="Caramel"> Caramel Corn</span>
+            </div>
+            <div class="flex items-center justify-between mt-16">
+              <span class="text-sm text-muted">Est. Ship: <strong>Jul 22</strong></span>
+              <button class="btn btn-outline btn-sm" onclick="navigate('snack-box')">Manage Box</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Delivery Progress -->
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><i class="fa-solid fa-location-crosshairs"></i> Live Delivery Tracker</p>
+            <p class="text-sm text-muted">Order #CC-8942 · BlueDart Express</p>
+            <div class="delivery-mini-track mt-16">
+              <div class="dmt-step done">
+                <div class="dmt-circle"><i class="fa-solid fa-check"></i></div>
+                <div class="dmt-line"></div>
+                <span class="dmt-label">Confirmed</span>
+              </div>
+              <div class="dmt-step done">
+                <div class="dmt-circle"><i class="fa-solid fa-check"></i></div>
+                <div class="dmt-line"></div>
+                <span class="dmt-label">Packed</span>
+              </div>
+              <div class="dmt-step active">
+                <div class="dmt-circle"><i class="fa-solid fa-truck"></i></div>
+                <div class="dmt-line"></div>
+                <span class="dmt-label">In Transit</span>
+              </div>
+              <div class="dmt-step">
+                <div class="dmt-circle"><i class="fa-solid fa-box-open"></i></div>
+                <div class="dmt-line"></div>
+                <span class="dmt-label">Out for Delivery</span>
+              </div>
+              <div class="dmt-step">
+                <div class="dmt-circle"><i class="fa-solid fa-house"></i></div>
+                <span class="dmt-label">Delivered</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mt-16">
+              <span class="badge badge-orange"><i class="fa-solid fa-truck"></i> In Transit</span>
+              <button class="btn btn-outline btn-sm" onclick="navigate('track')">Full Tracking</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Orders -->
+      <div class="card">
+        <div class="card-body">
+          <div class="flex items-center justify-between mb-16">
+            <p class="card-title" style="margin-bottom:0"><i class="fa-solid fa-clock-rotate-left"></i> Recent Orders</p>
+            <button class="btn btn-outline btn-sm" onclick="navigate('orders')">View All</button>
+          </div>
+          <div class="table-wrap">
+            <table class="db-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Contents</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#CC-8942</strong></td>
+                  <td>Jul 20, 2026</td>
+                  <td>July Gourmet Box (5 snacks)</td>
+                  <td>₹999.00</td>
+                  <td><span class="badge badge-orange"><i class="fa-solid fa-truck"></i> In Transit</span></td>
+                  <td><button class="btn btn-outline btn-xs" onclick="navigate('track')">Track</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#CC-7611</strong></td>
+                  <td>Jun 20, 2026</td>
+                  <td>June Gourmet Box (5 snacks)</td>
+                  <td>₹999.00</td>
+                  <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                  <td><button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-7611')">Invoice</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#CC-6204</strong></td>
+                  <td>May 20, 2026</td>
+                  <td>May Gourmet Box (5 snacks)</td>
+                  <td>₹999.00</td>
+                  <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                  <td><button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-6204')">Invoice</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 2: MY SUBSCRIPTION
+    ===================================================== -->
+    <section class="db-page" id="page-subscription">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>My Subscription</h1>
+          <p>Manage your plan, preferences and renewal settings.</p>
+        </div>
+        <a href="subscription-plans.html" class="btn btn-outline"><i class="fa-solid fa-arrow-up-right-dots"></i> View All Plans</a>
+      </div>
+
+      <!-- Plan Hero -->
+      <div class="sub-hero">
+        <div>
+          <span class="sh-badge"><i class="fa-solid fa-circle-check"></i> ACTIVE SUBSCRIPTION</span>
+          <h2 class="sh-title">Gourmet Crunch Box</h2>
+          <p class="sh-price">₹999 <span>/ month</span></p>
+          <p class="sh-renew"><i class="fa-solid fa-calendar-check"></i> Auto-renews on August 1, 2026</p>
+          <div class="sh-actions" style="margin-top:18px;">
+            <button class="btn btn-primary"><i class="fa-solid fa-arrows-rotate"></i> Change Plan</button>
+            <button class="btn-ghost-white"><i class="fa-solid fa-pause"></i> Pause</button>
+            <button class="btn-ghost-white" style="color:#f87171; border-color:rgba(248,113,113,.4);" onclick="document.getElementById('logoutModal').classList.add('open')">
+              <i class="fa-solid fa-xmark"></i> Cancel Plan
+            </button>
+          </div>
+        </div>
+        <div style="min-width:260px;">
+          <p style="font-size:12px; color:rgba(255,255,255,.6); margin-bottom:8px;">Subscription Health</p>
+          <div class="prog-bar mb-16"><div class="prog-fill prog-amber" style="width:83%"></div></div>
+          <p style="font-size:12px; color:rgba(255,255,255,.6);">Boxes Received: <strong style="color:#fff;">24 of 29</strong></p>
+          <p style="font-size:12px; color:rgba(255,255,255,.6); margin-top:6px;">Customer Since: <strong style="color:#fff;">July 2024</strong></p>
+        </div>
+      </div>
+
+      <!-- Included Features -->
+      <div class="card mb-20">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-list-check"></i> What's Included in Gourmet Box</p>
+          <div class="sub-features-grid">
+            <div class="sf-item"><i class="fa-solid fa-circle-check"></i> 6 Curated Premium Snacks</div>
+            <div class="sf-item"><i class="fa-solid fa-circle-check"></i> Free Pan-India Express Delivery</div>
+            <div class="sf-item"><i class="fa-solid fa-circle-check"></i> Monthly Snack Swap (up to 3 items)</div>
+            <div class="sf-item"><i class="fa-solid fa-circle-check"></i> 1.5× Reward Points Multiplier</div>
+            <div class="sf-item"><i class="fa-solid fa-circle-check"></i> Exclusive Member Discounts</div>
+            <div class="sf-item"><i class="fa-solid fa-circle-check"></i> Priority Customer Support</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preferences -->
+      <div class="card pref-card">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-sliders"></i> Subscription Preferences</p>
+          <div class="pref-form-grid">
+            <div class="form-group">
+              <label for="deliveryFreq">Delivery Frequency</label>
+              <select id="deliveryFreq" class="form-select">
+                <option selected>Monthly (Once a month)</option>
+                <option>Bi-Weekly (Twice a month)</option>
+                <option>Quarterly (Every 3 months)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="deliveryDate">Preferred Delivery Window</label>
+              <select id="deliveryDate" class="form-select">
+                <option selected>1st – 5th of every month</option>
+                <option>10th – 15th of every month</option>
+                <option>20th – 25th of every month</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="snackPref">Snack Preference</label>
+              <select id="snackPref" class="form-select">
+                <option>All Varieties (Default)</option>
+                <option>More Sweet Snacks</option>
+                <option>More Savory Snacks</option>
+                <option>Healthy Focus</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="dietPref">Dietary Restrictions</label>
+              <select id="dietPref" class="form-select">
+                <option>No Restrictions</option>
+                <option>Gluten Free</option>
+                <option>Vegan Only</option>
+                <option>Nut Free</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="toggle-row">
+            <div>
+              <p class="toggle-label">Auto-Renewal</p>
+              <p class="toggle-desc">Automatically charge your saved payment method on renewal date</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="autoRenew" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div class="toggle-row">
+            <div>
+              <p class="toggle-label">Surprise Snack Mode</p>
+              <p class="toggle-desc">Let us handpick your monthly snacks as a surprise box</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="surpriseMode">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <div style="margin-top:18px; text-align:right;">
+            <button class="btn btn-primary" onclick="showToast('Preferences saved successfully!','success')">
+              <i class="fa-solid fa-floppy-disk"></i> Save Preferences
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 3: MY ORDERS
+    ===================================================== -->
+    <section class="db-page" id="page-orders">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>My Orders</h1>
+          <p>View and manage all your past and current orders.</p>
+        </div>
+      </div>
+
+      <!-- Summary Metrics -->
+      <div class="metrics-grid mb-24" style="grid-template-columns: repeat(4,1fr);">
+        <div class="metric-card mc-green">
+          <div class="mc-icon bg-green"><i class="fa-solid fa-box-archive"></i></div>
+          <div class="mc-body">
+            <p class="mc-label">Total Orders</p>
+            <p class="mc-value">24</p>
+            <p class="mc-sub">All time</p>
+          </div>
+        </div>
+        <div class="metric-card mc-amber">
+          <div class="mc-icon bg-orange"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="mc-body">
+            <p class="mc-label">In Transit</p>
+            <p class="mc-value">1</p>
+            <p class="mc-sub">Order #CC-8942</p>
+          </div>
+        </div>
+        <div class="metric-card mc-purple">
+          <div class="mc-icon bg-purple"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <div class="mc-body">
+            <p class="mc-label">Total Spent</p>
+            <p class="mc-value">₹2396</p>
+            <p class="mc-sub">Lifetime value</p>
+          </div>
+        </div>
+        <div class="metric-card mc-blue">
+          <div class="mc-icon bg-blue"><i class="fa-solid fa-rotate-left"></i></div>
+          <div class="mc-body">
+            <p class="mc-label">Refunded</p>
+            <p class="mc-value">1</p>
+            <p class="mc-sub">₹499 returned</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="orders-filter-bar">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="all">All (24)</button>
+          <button class="filter-pill" data-filter="transit">In Transit (1)</button>
+          <button class="filter-pill" data-filter="delivered">Delivered (22)</button>
+          <button class="filter-pill" data-filter="cancelled">Cancelled (1)</button>
+        </div>
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search orders..." id="orderSearch">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="table-wrap">
+            <table class="db-table" id="ordersTable">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Contents</th>
+                  <th>Amount</th>
+                  <th>Payment</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-status="transit">
+                  <td><strong>#CC-8942</strong></td>
+                  <td>Jul 20, 2026</td>
+                  <td>July Gourmet Box (5 Items)</td>
+                  <td>₹999.00</td>
+                  <td><i class="fa-solid fa-qrcode text-muted"></i> UPI</td>
+                  <td><span class="badge badge-orange"><i class="fa-solid fa-truck"></i> In Transit</span></td>
+                  <td><div class="action-btns">
+                    <button class="btn btn-outline btn-xs" onclick="navigate('track')">Track</button>
+                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-8942')">Invoice</button>
+                  </div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td><strong>#CC-7611</strong></td>
+                  <td>Jun 20, 2026</td>
+                  <td>June Gourmet Box (5 Items)</td>
+                  <td>₹999.00</td>
+                  <td><i class="fa-solid fa-credit-card text-muted"></i> Visa ****4242</td>
+                  <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                  <td><div class="action-btns">
+                    <button class="btn btn-outline btn-xs">Reorder</button>
+                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-7611')">Invoice</button>
+                  </div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td><strong>#CC-6204</strong></td>
+                  <td>May 20, 2026</td>
+                  <td>May Gourmet Box (5 Items)</td>
+                  <td>₹999.00</td>
+                  <td><i class="fa-solid fa-credit-card text-muted"></i> Visa ****4242</td>
+                  <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                  <td><div class="action-btns">
+                    <button class="btn btn-outline btn-xs">Reorder</button>
+                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-6204')">Invoice</button>
+                  </div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td><strong>#CC-5198</strong></td>
+                  <td>Apr 20, 2026</td>
+                  <td>April Gourmet Box (5 Items)</td>
+                  <td>₹999.00</td>
+                  <td><i class="fa-solid fa-credit-card text-muted"></i> Visa ****4242</td>
+                  <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                  <td><div class="action-btns">
+                    <button class="btn btn-outline btn-xs">Reorder</button>
+                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-5198')">Invoice</button>
+                  </div></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td><strong>#CC-4322</strong></td>
+                  <td>Mar 20, 2026</td>
+                  <td>March Gourmet Box (5 Items)</td>
+                  <td>₹999.00</td>
+                  <td><i class="fa-solid fa-credit-card text-muted"></i> MasterCard ****8819</td>
+                  <td><span class="badge badge-green"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                  <td><div class="action-btns">
+                    <button class="btn btn-outline btn-xs">Reorder</button>
+                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-4322')">Invoice</button>
+                  </div></td>
+                </tr>
+                <tr data-status="cancelled">
+                  <td><strong>#CC-3870</strong></td>
+                  <td>Mar 15, 2026</td>
+                  <td>Movie Night Add-on Pack</td>
+                  <td>₹499.00</td>
+                  <td><i class="fa-solid fa-rotate-left text-muted"></i> Refunded</td>
+                  <td><span class="badge badge-red"><i class="fa-solid fa-xmark"></i> Cancelled</span></td>
+                  <td><div class="action-btns">
+                    <button class="btn btn-outline btn-xs" onclick="openInvoiceModal('CC-3870')">Details</button>
+                  </div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 4: MY SNACK BOX
+    ===================================================== -->
+    <section class="db-page" id="page-snack-box">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>My Snack Box</h1>
+          <p>Customize the snacks in your upcoming shipment. Box locks on <strong>July 26, 2026</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Box Header -->
+      <div class="snack-box-header">
+        <div class="sbh-left">
+          <h3>July Gourmet Box</h3>
+          <p>Curated for Alex Morgan · Delivery: July 28, 2026</p>
+        </div>
+        <div class="sbh-capacity">
+          <div class="sbh-capacity">
+            <span class="cap-label">Slots: <strong>5 / 5</strong></span>
+            <div class="cap-bar prog-bar" style="margin-left:12px;"><div class="prog-fill prog-amber" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Banner -->
+      <div style="background:rgba(37,99,235,.08); border:1px solid rgba(37,99,235,.2); border-radius:12px; padding:14px 18px; display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+        <i class="fa-solid fa-circle-info" style="color:#2563eb; font-size:18px;"></i>
+        <div>
+          <strong>Swap any item until Jul 26!</strong>
+          <p class="text-sm text-muted" style="margin-top:2px;">Choose from gourmet popcorn, roasted nuts, premium chocolates and healthy snacks.</p>
+        </div>
+      </div>
+
+      <!-- Snacks Grid -->
+      <div class="snacks-grid">
+        <div class="snack-card">
+          <div class="sc-img-wrap">
+            <img src="image/a1.jpg" alt="Truffle Gourmet Popcorn">
+            <span class="sc-tag">Popcorn</span>
+          </div>
+          <div class="sc-body">
+            <p class="sc-name">Truffle Gourmet Popcorn</p>
+            <p class="sc-cal"><i class="fa-solid fa-fire text-brand"></i> 220 kcal · 120g</p>
+            <button class="btn btn-outline btn-sm w-full" onclick="openSwapModal('Truffle Gourmet Popcorn')">
+              <i class="fa-solid fa-rotate"></i> Swap
+            </button>
+          </div>
+        </div>
+        <div class="snack-card">
+          <div class="sc-img-wrap">
+            <img src="image/a2.jpg" alt="Spicy Makhana">
+            <span class="sc-tag">Healthy</span>
+          </div>
+          <div class="sc-body">
+            <p class="sc-name">Roasted Spicy Makhana</p>
+            <p class="sc-cal"><i class="fa-solid fa-fire text-brand"></i> 140 kcal · 90g</p>
+            <button class="btn btn-outline btn-sm w-full" onclick="openSwapModal('Roasted Spicy Makhana')">
+              <i class="fa-solid fa-rotate"></i> Swap
+            </button>
+          </div>
+        </div>
+        <div class="snack-card">
+          <div class="sc-img-wrap">
+            <img src="image/a3.jpg" alt="Cheese Pretzels">
+            <span class="sc-tag">Crisps</span>
+          </div>
+          <div class="sc-body">
+            <p class="sc-name">Cheese Pretzel Twists</p>
+            <p class="sc-cal"><i class="fa-solid fa-fire text-brand"></i> 260 kcal · 150g</p>
+            <button class="btn btn-outline btn-sm w-full" onclick="openSwapModal('Cheese Pretzel Twists')">
+              <i class="fa-solid fa-rotate"></i> Swap
+            </button>
+          </div>
+        </div>
+        <div class="snack-card">
+          <div class="sc-img-wrap">
+            <img src="image/a4.jpg" alt="Dark Chocolate Almonds">
+            <span class="sc-tag">Sweet</span>
+          </div>
+          <div class="sc-body">
+            <p class="sc-name">Dark Chocolate Almonds</p>
+            <p class="sc-cal"><i class="fa-solid fa-fire text-brand"></i> 310 kcal · 100g</p>
+            <button class="btn btn-outline btn-sm w-full" onclick="openSwapModal('Dark Chocolate Almonds')">
+              <i class="fa-solid fa-rotate"></i> Swap
+            </button>
+          </div>
+        </div>
+        <div class="snack-card">
+          <div class="sc-img-wrap">
+            <img src="image/a8.jpg" alt="Caramel Popcorn">
+            <span class="sc-tag">Popcorn</span>
+          </div>
+          <div class="sc-body">
+            <p class="sc-name">Caramel Sea Salt Popcorn</p>
+            <p class="sc-cal"><i class="fa-solid fa-fire text-brand"></i> 190 kcal · 110g</p>
+            <button class="btn btn-outline btn-sm w-full" onclick="openSwapModal('Caramel Sea Salt Popcorn')">
+              <i class="fa-solid fa-rotate"></i> Swap
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nutritional Summary -->
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-heart-pulse"></i> Box Nutritional Summary</p>
+          <div class="nutri-grid">
+            <div class="nutri-item">
+              <span class="nutri-val">1,120</span>
+              <span class="nutri-lbl">Total kcal</span>
+            </div>
+            <div class="nutri-item">
+              <span class="nutri-val">28g</span>
+              <span class="nutri-lbl">Protein</span>
+            </div>
+            <div class="nutri-item">
+              <span class="nutri-val">42g</span>
+              <span class="nutri-lbl">Dietary Fiber</span>
+            </div>
+            <div class="nutri-item" style="--brand:#16a34a;">
+              <span class="nutri-val" style="color:var(--green)">100%</span>
+              <span class="nutri-lbl">Gluten Free</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 5: REWARDS
+    ===================================================== -->
+    <section class="db-page" id="page-rewards">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>Crunch Rewards</h1>
+          <p>Earn points on every box and redeem for free snacks, discounts, and upgrades.</p>
+        </div>
+      </div>
+
+      <!-- Rewards Hero Banner -->
+      <div class="rewards-hero mb-24">
+        <div class="rh-left">
+          <span class="rh-pts-badge"><i class="fa-solid fa-medal"></i> VIP Rewards Program</span>
+          <p class="rh-pts">1,450 <span>Crunch Points</span></p>
+          <p class="rh-worth">Equivalent to ₹145.00 wallet value</p>
+        </div>
+        <div class="rh-right">
+          <div class="tier-row">
+            <span>Tier: <strong>Gold Crazer</strong></span>
+            <span>Next: <strong>Platinum</strong></span>
+          </div>
+          <div class="prog-bar"><div class="prog-fill" style="background:linear-gradient(90deg,#fbbf24,#f59e0b); width:72%;"></div></div>
+          <p style="font-size:12px; color:rgba(255,255,255,.7); margin-top:8px;">550 points to Platinum Crazer</p>
+        </div>
+      </div>
+
+      <!-- Redeem Vouchers -->
+      <div class="card mb-24">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-gift"></i> Redeem Points for Rewards</p>
+          <div class="vouchers-grid">
+            <div class="voucher-card">
+              <span class="vc-icon">🎟️</span>
+              <div class="vc-info">
+                <p class="vc-title">₹200 Off Next Box</p>
+                <p class="vc-pts">1,000 Points required</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="redeemPoints(1000,'₹200 Off Next Box')">Redeem</button>
+            </div>
+            <div class="voucher-card">
+              <span class="vc-icon">🍿</span>
+              <div class="vc-info">
+                <p class="vc-title">Free Popcorn Bucket</p>
+                <p class="vc-pts">600 Points required</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="redeemPoints(600,'Free Popcorn Bucket')">Redeem</button>
+            </div>
+            <div class="voucher-card">
+              <span class="vc-icon">🚀</span>
+              <div class="vc-info">
+                <p class="vc-title">Air Express Upgrade</p>
+                <p class="vc-pts">400 Points required</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="redeemPoints(400,'Express Shipping Upgrade')">Redeem</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Refer a Friend -->
+      <div class="card mb-24">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-user-plus"></i> Refer & Earn 500 Points</p>
+          <div class="refer-card-inner">
+            <div class="ref-icon-wrap"><i class="fa-solid fa-share-nodes"></i></div>
+            <div class="ref-info">
+              <h4>Share your code, earn 500 Crunch Points</h4>
+              <p>Your friend gets ₹150 off their first box. You earn 500 points after they subscribe.</p>
+              <div class="ref-input-row">
+                <input class="ref-code-input" id="referralCodeInput" type="text" value="ALEX-CRUNCH-2026" readonly>
+                <button class="btn btn-primary btn-sm" onclick="copyReferralCode()">
+                  <i class="fa-regular fa-copy"></i> Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Points History -->
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-clock-rotate-left"></i> Points History</p>
+          <div class="table-wrap">
+            <table class="db-table">
+              <thead>
+                <tr><th>Date</th><th>Activity</th><th>Type</th><th>Points</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jul 20, 2026</td>
+                  <td>July Subscription Renewal (#CC-8942)</td>
+                  <td><div class="pts-type-icon bg-green" style="display:inline-flex; width:26px; height:26px; align-items:center; justify-content:center; border-radius:50%; font-size:11px; color:#fff;"><i class="fa-solid fa-plus"></i></div></td>
+                  <td><strong class="text-green">+150 Pts</strong></td>
+                </tr>
+                <tr>
+                  <td>Jun 25, 2026</td>
+                  <td>Referral Bonus — Rahul Sharma subscribed</td>
+                  <td><div class="pts-type-icon bg-purple" style="display:inline-flex; width:26px; height:26px; align-items:center; justify-content:center; border-radius:50%; font-size:11px; color:#fff;"><i class="fa-solid fa-user-plus"></i></div></td>
+                  <td><strong class="text-green">+500 Pts</strong></td>
+                </tr>
+                <tr>
+                  <td>Jun 20, 2026</td>
+                  <td>June Subscription Renewal (#CC-7611)</td>
+                  <td><div class="pts-type-icon bg-green" style="display:inline-flex; width:26px; height:26px; align-items:center; justify-content:center; border-radius:50%; font-size:11px; color:#fff;"><i class="fa-solid fa-plus"></i></div></td>
+                  <td><strong class="text-green">+150 Pts</strong></td>
+                </tr>
+                <tr>
+                  <td>Jun 15, 2026</td>
+                  <td>Redeemed: ₹100 Off Coupon</td>
+                  <td><div class="pts-type-icon bg-red" style="display:inline-flex; width:26px; height:26px; align-items:center; justify-content:center; border-radius:50%; font-size:11px; color:#fff;"><i class="fa-solid fa-minus"></i></div></td>
+                  <td><strong class="text-red">−800 Pts</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 6: TRACK DELIVERY
+    ===================================================== -->
+    <section class="db-page" id="page-track">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>Track Delivery</h1>
+          <p>Real-time status for your active July Gourmet Box shipment.</p>
+        </div>
+      </div>
+
+      <!-- Tracking Hero -->
+      <div class="track-hero mb-24">
+        <div>
+          <span class="th-badge"><i class="fa-solid fa-truck-fast"></i> IN TRANSIT</span>
+          <p class="th-order">Order #CC-8942</p>
+          <p class="th-meta">Courier: <strong style="color:#fff;">BlueDart Express</strong> &bull; AWB: <strong style="color:#fff;">BD987452310</strong></p>
+        </div>
+        <div class="th-right">
+          <p class="th-est-label">ESTIMATED DELIVERY</p>
+          <p class="th-est-date">July 28, 2026</p>
+          <p class="th-est-slot">Between 2:00 PM – 5:00 PM</p>
+        </div>
+      </div>
+
+      <!-- Stepper -->
+      <div class="card mb-24">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-route"></i> Shipment Timeline</p>
+          <div class="track-stepper">
+            <div class="ts-step done">
+              <div class="ts-circle"><i class="fa-solid fa-check"></i></div>
+              <p class="ts-label">Order Confirmed</p>
+              <p class="ts-date">Jul 20, 10:30 AM</p>
+            </div>
+            <div class="ts-step done">
+              <div class="ts-circle"><i class="fa-solid fa-check"></i></div>
+              <p class="ts-label">Freshly Packed</p>
+              <p class="ts-date">Jul 21, 4:15 PM</p>
+            </div>
+            <div class="ts-step active">
+              <div class="ts-circle"><i class="fa-solid fa-truck"></i></div>
+              <p class="ts-label">Dispatched & In Transit</p>
+              <p class="ts-date">Jul 22, 9:00 AM</p>
+            </div>
+            <div class="ts-step">
+              <div class="ts-circle"><i class="fa-solid fa-box-open"></i></div>
+              <p class="ts-label">Out for Delivery</p>
+              <p class="ts-date">Expected Jul 28</p>
+            </div>
+            <div class="ts-step">
+              <div class="ts-circle"><i class="fa-solid fa-house-chimney"></i></div>
+              <p class="ts-label">Delivered</p>
+              <p class="ts-date">Expected Jul 28</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two-col: Courier + Instructions -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><i class="fa-solid fa-id-badge"></i> Courier Details</p>
+            <table class="db-table courier-table">
+              <tbody>
+                <tr><td>Courier Service</td><td>BlueDart Express</td></tr>
+                <tr><td>AWB Number</td><td>BD987452310</td></tr>
+                <tr><td>Delivery Executive</td><td>Rajesh Kumar</td></tr>
+                <tr><td>Contact</td><td>+91 98765 12345</td></tr>
+                <tr><td>Current Location</td><td>Bengaluru Hub</td></tr>
+                <tr><td>Last Update</td><td>Jul 22, 9:00 AM</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><i class="fa-solid fa-note-sticky"></i> Delivery Instructions</p>
+            <p class="text-sm text-muted mb-16">Leave a note for the delivery executive about your drop-off preference.</p>
+            <div class="form-group">
+              <textarea class="form-textarea" id="deliveryNotes" rows="4" placeholder="e.g. Leave at Gate 2 with security guard if unavailable.">Leave box with security guard at Gate 2.</textarea>
+            </div>
+            <button class="btn btn-primary btn-sm mt-12" onclick="showToast('Delivery instructions saved!','success')">
+              <i class="fa-solid fa-floppy-disk"></i> Save Instructions
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 7: PAYMENTS
+    ===================================================== -->
+    <section class="db-page" id="page-payments">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>Payments & Billing</h1>
+          <p>Manage your saved payment methods and download billing invoices.</p>
+        </div>
+        <button class="btn btn-primary" onclick="document.getElementById('addPaymentModal').classList.add('open')">
+          <i class="fa-solid fa-plus"></i> Add Payment Method
+        </button>
+      </div>
+
+      <!-- Saved Cards -->
+      <div class="card mb-24">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-credit-card"></i> Saved Payment Methods</p>
+          <div class="pay-cards-grid">
+            <div class="pay-card default-card">
+              <div class="pay-card-top">
+                <i class="fa-brands fa-cc-visa pay-card-brand"></i>
+                <span class="pay-card-default-tag">DEFAULT</span>
+              </div>
+              <p class="pay-card-num">•••• •••• •••• 4242</p>
+              <div class="pay-card-footer">
+                <span>Expires 08/28</span>
+                <span>Alex Morgan</span>
+              </div>
+            </div>
+            <div class="pay-card">
+              <div class="pay-card-top">
+                <i class="fa-brands fa-cc-mastercard pay-card-brand"></i>
+              </div>
+              <p class="pay-card-num">•••• •••• •••• 8819</p>
+              <div class="pay-card-footer">
+                <span>Expires 11/27</span>
+                <span>Alex Morgan</span>
+              </div>
+            </div>
+            <div class="pay-card upi-card">
+              <div class="pay-card-top">
+                <span class="pay-card-brand" style="font-size:18px; font-weight:800; color:#22c55e;">UPI</span>
+                <span style="background:rgba(34,197,94,.2); color:#22c55e; font-size:9px; font-weight:800; padding:2px 8px; border-radius:4px;">VERIFIED</span>
+              </div>
+              <p class="pay-card-num" style="font-size:14px;">alex@okaxis</p>
+              <div class="pay-card-footer">
+                <span>Google Pay</span>
+                <span>Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Billing History -->
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title"><i class="fa-solid fa-receipt"></i> Billing History</p>
+          <div class="table-wrap">
+            <table class="db-table">
+              <thead>
+                <tr><th>Invoice ID</th><th>Date</th><th>Description</th><th>Amount</th><th>Method</th><th>Download</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#INV-2026-07</strong></td>
+                  <td>Jul 20, 2026</td>
+                  <td>Gourmet Box – July Subscription</td>
+                  <td>₹999.00</td>
+                  <td>UPI (alex@okaxis)</td>
+                  <td><button class="btn btn-outline btn-xs" onclick="showToast('Invoice downloaded!','success')"><i class="fa-solid fa-download"></i> PDF</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-06</strong></td>
+                  <td>Jun 20, 2026</td>
+                  <td>Gourmet Box – June Subscription</td>
+                  <td>₹999.00</td>
+                  <td>Visa ending 4242</td>
+                  <td><button class="btn btn-outline btn-xs" onclick="showToast('Invoice downloaded!','success')"><i class="fa-solid fa-download"></i> PDF</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-05</strong></td>
+                  <td>May 20, 2026</td>
+                  <td>Gourmet Box – May Subscription</td>
+                  <td>₹999.00</td>
+                  <td>Visa ending 4242</td>
+                  <td><button class="btn btn-outline btn-xs" onclick="showToast('Invoice downloaded!','success')"><i class="fa-solid fa-download"></i> PDF</button></td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-04</strong></td>
+                  <td>Apr 20, 2026</td>
+                  <td>Gourmet Box – April Subscription</td>
+                  <td>₹999.00</td>
+                  <td>Visa ending 4242</td>
+                  <td><button class="btn btn-outline btn-xs" onclick="showToast('Invoice downloaded!','success')"><i class="fa-solid fa-download"></i> PDF</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PAGE 8: ADDRESS BOOK
+    ===================================================== -->
+    <section class="db-page" id="page-address-book">
+      <div class="page-hd">
+        <div class="page-hd-left">
+          <h1>Address Book</h1>
+          <p>Manage your saved shipping and billing addresses.</p>
+        </div>
+        <button class="btn btn-primary" onclick="document.getElementById('addAddressModal').classList.add('open')">
+          <i class="fa-solid fa-plus"></i> Add New Address
+        </button>
+      </div>
+
+      <div class="addr-cards-grid" id="addressGrid">
+        <!-- Address 1: Primary -->
+        <div class="addr-card primary-addr">
+          <div class="addr-card-hd">
+            <span class="addr-type"><i class="fa-solid fa-house"></i> HOME</span>
+            <span class="addr-primary-tag"><i class="fa-solid fa-check"></i> Primary</span>
+          </div>
+          <p class="addr-name">Alex Morgan</p>
+          <p class="addr-line">Flat 402, Sunshine Apartments,<br>80 Feet Road, KK Nagar</p>
+          <p class="addr-line">Madurai, Tamil Nadu — 625020</p>
+          <p class="addr-phone"><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <div class="addr-actions">
+            <button class="btn btn-outline btn-sm"><i class="fa-solid fa-pen"></i> Edit</button>
+            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
+          </div>
+        </div>
+
+        <!-- Address 2: Office -->
+        <div class="addr-card">
+          <div class="addr-card-hd">
+            <span class="addr-type"><i class="fa-solid fa-briefcase"></i> OFFICE</span>
+          </div>
+          <p class="addr-name">Alex Morgan</p>
+          <p class="addr-line">Suite 12B, TechCorp IT Park,<br>Anna Salai</p>
+          <p class="addr-line">Madurai, Tamil Nadu — 625001</p>
+          <p class="addr-phone"><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <div class="addr-actions">
+            <button class="btn btn-outline btn-sm" onclick="showToast('Set as primary shipping address','success')">Set Primary</button>
+            <button class="btn btn-outline btn-sm"><i class="fa-solid fa-pen"></i> Edit</button>
+            <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============================================================
+     MODALS
+============================================================ -->
+
+<!-- Swap Snack Modal -->
+<div class="db-modal" id="swapModal" role="dialog" aria-modal="true" aria-label="Swap Snack">
+  <div class="modal-overlay-bg" onclick="closeModal('swapModal')"></div>
+  <div class="modal-box">
+    <div class="modal-hd">
+      <h3>Swap Snack Item</h3>
+      <button class="modal-close" onclick="closeModal('swapModal')" aria-label="Close modal">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="text-sm text-muted mb-16">Replace <strong id="swapTargetName"></strong> with one of these options:</p>
+      <div class="swap-options">
+        <label class="swap-opt">
+          <input type="radio" name="swapOption" value="Peri Peri Crispy Makhana" checked>
+          <img src="image/a2.jpg" alt="Makhana">
+          <div class="swap-opt-info">
+            <strong>Peri Peri Crispy Makhana</strong>
+            <span>150 kcal · Spicy & Tangy</span>
+          </div>
+        </label>
+        <label class="swap-opt">
+          <input type="radio" name="swapOption" value="Honey Butter Cashews">
+          <img src="image/a7.jpg" alt="Cashews">
+          <div class="swap-opt-info">
+            <strong>Honey Butter Roasted Cashews</strong>
+            <span>280 kcal · Sweet & Salty</span>
+          </div>
+        </label>
+        <label class="swap-opt">
+          <input type="radio" name="swapOption" value="Sea Salt Dark Choco Cluster">
+          <img src="image/a9.jpg" alt="Chocolate">
+          <div class="swap-opt-info">
+            <strong>Sea Salt Dark Choco Cluster</strong>
+            <span>240 kcal · Sugar Free</span>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn btn-outline" onclick="closeModal('swapModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="confirmSwap()"><i class="fa-solid fa-check"></i> Confirm Swap</button>
+    </div>
   </div>
+</div>
 
+<!-- Add Address Modal -->
+<div class="db-modal" id="addAddressModal" role="dialog" aria-modal="true" aria-label="Add New Address">
+  <div class="modal-overlay-bg" onclick="closeModal('addAddressModal')"></div>
+  <div class="modal-box">
+    <div class="modal-hd">
+      <h3>Add New Address</h3>
+      <button class="modal-close" onclick="closeModal('addAddressModal')" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row mb-16">
+        <div class="form-group">
+          <label for="addrName">Full Name</label>
+          <input type="text" id="addrName" class="form-input" placeholder="Alex Morgan" required>
+        </div>
+        <div class="form-group">
+          <label for="addrPhone">Phone Number</label>
+          <input type="tel" id="addrPhone" class="form-input" placeholder="+91 98765 43210" required>
+        </div>
+      </div>
+      <div class="form-group mb-16">
+        <label for="addrStreet">Street / Apartment</label>
+        <input type="text" id="addrStreet" class="form-input" placeholder="Flat 101, Sunshine Towers, Main Road" required>
+      </div>
+      <div class="form-row mb-16">
+        <div class="form-group">
+          <label for="addrCity">City</label>
+          <input type="text" id="addrCity" class="form-input" placeholder="Madurai" required>
+        </div>
+        <div class="form-group">
+          <label for="addrState">State</label>
+          <input type="text" id="addrState" class="form-input" placeholder="Tamil Nadu" required>
+        </div>
+      </div>
+      <div class="form-row mb-16">
+        <div class="form-group">
+          <label for="addrPIN">PIN Code</label>
+          <input type="text" id="addrPIN" class="form-input" placeholder="625020" required>
+        </div>
+        <div class="form-group">
+          <label for="addrType">Address Type</label>
+          <select id="addrType" class="form-select">
+            <option>Home</option>
+            <option>Office</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <label style="display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; cursor:pointer;">
+        <input type="checkbox" id="addrDefault" style="accent-color:var(--brand);">
+        Make this my primary shipping address
+      </label>
+    </div>
+    <div class="modal-ft">
+      <button class="btn btn-outline" onclick="closeModal('addAddressModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveAddress()"><i class="fa-solid fa-floppy-disk"></i> Save Address</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Payment Modal -->
+<div class="db-modal" id="addPaymentModal" role="dialog" aria-modal="true" aria-label="Add Payment Method">
+  <div class="modal-overlay-bg" onclick="closeModal('addPaymentModal')"></div>
+  <div class="modal-box">
+    <div class="modal-hd">
+      <h3>Add Payment Method</h3>
+      <button class="modal-close" onclick="closeModal('addPaymentModal')" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group mb-16">
+        <label for="cardName">Cardholder Name</label>
+        <input type="text" id="cardName" class="form-input" placeholder="Alex Morgan">
+      </div>
+      <div class="form-group mb-16">
+        <label for="cardNum">Card Number</label>
+        <input type="text" id="cardNum" class="form-input" placeholder="4242 4242 4242 4242" maxlength="19">
+      </div>
+      <div class="form-row mb-16">
+        <div class="form-group">
+          <label for="cardExp">Expiry Date</label>
+          <input type="text" id="cardExp" class="form-input" placeholder="MM / YY" maxlength="7">
+        </div>
+        <div class="form-group">
+          <label for="cardCVV">CVV</label>
+          <input type="password" id="cardCVV" class="form-input" placeholder="•••" maxlength="4">
+        </div>
+      </div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn btn-outline" onclick="closeModal('addPaymentModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="showToast('Payment method added securely!','success'); closeModal('addPaymentModal')"><i class="fa-solid fa-lock"></i> Save Card</button>
+    </div>
+  </div>
+</div>
+
+<!-- Invoice Modal -->
+<div class="db-modal" id="invoiceModal" role="dialog" aria-modal="true" aria-label="Invoice Details">
+  <div class="modal-overlay-bg" onclick="closeModal('invoiceModal')"></div>
+  <div class="modal-box">
+    <div class="modal-hd">
+      <h3>Invoice — <span id="invoiceOrderId"></span></h3>
+      <button class="modal-close" onclick="closeModal('invoiceModal')" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding-bottom:14px; border-bottom:1px solid var(--border-soft); margin-bottom:14px;">
+        <img src="image/logo.png" alt="Crunch Craze" style="height:36px; object-fit:contain;">
+        <div style="text-align:right; font-size:12px; color:var(--muted);">
+          <p>Crunch Craze India Pvt. Ltd.</p>
+          <p>Madurai, Tamil Nadu</p>
+          <p>GST: 33AAACC0000C1Z5</p>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; font-size:13px; margin-bottom:16px;">
+        <div>
+          <p class="text-muted">Billed To:</p>
+          <p class="font-700">Alex Morgan</p>
+          <p class="text-muted">Flat 402, KK Nagar,<br>Madurai, TN — 625020</p>
+        </div>
+        <div style="text-align:right;">
+          <p class="text-muted">Order Date:</p>
+          <p id="invDate" class="font-700"></p>
+          <p class="text-muted mt-8">Payment Method:</p>
+          <p id="invMethod" class="font-700"></p>
+        </div>
+      </div>
+      <table class="db-table" style="margin-bottom:14px;">
+        <thead><tr><th>Description</th><th>Qty</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Gourmet Crunch Snack Box</td><td>1</td><td>₹999.00</td></tr>
+          <tr><td>Pan-India Express Shipping</td><td>1</td><td><span class="text-green">FREE</span></td></tr>
+        </tbody>
+      </table>
+      <div style="text-align:right; font-size:15px; font-weight:800; padding-top:12px; border-top:2px solid var(--border-soft);">Total Paid: ₹999.00</div>
+    </div>
+    <div class="modal-ft">
+      <button class="btn btn-outline" onclick="closeModal('invoiceModal')">Close</button>
+      <button class="btn btn-primary" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+    </div>
+  </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="db-modal" id="logoutModal" role="dialog" aria-modal="true" aria-label="Confirm Logout">
+  <div class="modal-overlay-bg" onclick="closeModal('logoutModal')"></div>
+  <div class="modal-box logout-modal-box">
+    <div class="logout-modal-inner">
+      <div class="logout-modal-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+      <h3>Confirm Logout</h3>
+      <p>Are you sure you want to log out of your Crunch Craze account?</p>
+      <div class="logout-btns">
+        <button class="btn btn-outline" onclick="closeModal('logoutModal')">Stay Logged In</button>
+        <button class="btn btn-red" onclick="window.location.href='login.html'"><i class="fa-solid fa-right-from-bracket"></i> Yes, Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Zone -->
+<div class="toast-zone" id="toastZone"></div>
+
+<!-- ============================================================
+     DASHBOARD JAVASCRIPT (inline — no external dependency on site JS)
+============================================================ -->
+<script>
+// ── Navigation ─────────────────────────────────────────────
+function navigate(pageId) {
+  const pages    = document.querySelectorAll('.db-page');
+  const navItems = document.querySelectorAll('.nav-item[data-page]');
+
+  pages.forEach(p => p.classList.remove('active'));
+  navItems.forEach(n => n.classList.remove('active'));
+
+  const target  = document.getElementById('page-' + pageId);
+  const navItem = document.querySelector('.nav-item[data-page="' + pageId + '"]');
+  if (target)  target.classList.add('active');
+  if (navItem) navItem.classList.add('active');
+
+  // Close mobile sidebar
+  closeSidebar();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Nav item click delegation (sidebar + profile dropdown)
+document.querySelectorAll('.nav-item[data-page], .nav-trigger[data-page]').forEach(el => {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    navigate(this.dataset.page);
+    if (this.closest('.profile-dropdown')) closeProfileDropdown();
+  });
+});
+
+// ── Sidebar Toggle ─────────────────────────────────────────
+const sidebar  = document.getElementById('dbSidebar');
+const overlay  = document.getElementById('sidebarOverlay');
+const hamburger = document.getElementById('dbHamburger');
+
+function openSidebar() {
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+}
+function closeSidebar() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
+function toggleSidebar() {
+  sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+}
+hamburger.addEventListener('click', toggleSidebar);
+overlay.addEventListener('click', closeSidebar);
+
+// ── Notifications ───────────────────────────────────────────
+const notifBtn      = document.getElementById('notifBtn');
+const notifDropdown = document.getElementById('notifDropdown');
+const notifBadge    = document.getElementById('notifBadge');
+
+notifBtn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  const isOpen = notifDropdown.classList.toggle('open');
+  notifBtn.setAttribute('aria-expanded', isOpen);
+  if (profileDropdown.classList.contains('open')) closeProfileDropdown();
+});
+
+document.getElementById('markAllRead').addEventListener('click', function() {
+  document.querySelectorAll('.notif-item.unread').forEach(item => item.classList.remove('unread'));
+  notifBadge.textContent = '0';
+  notifBadge.style.display = 'none';
+  showToast('All notifications marked as read', 'success');
+});
+
+document.querySelectorAll('.notif-item').forEach(item => {
+  item.addEventListener('click', function() {
+    this.classList.remove('unread');
+    const unreadCount = document.querySelectorAll('.notif-item.unread').length;
+    if (unreadCount > 0) {
+      notifBadge.textContent = unreadCount;
+      notifBadge.style.display = '';
+    } else {
+      notifBadge.style.display = 'none';
+    }
+  });
+});
+
+// ── Profile Dropdown ────────────────────────────────────────
+const profileChipBtn   = document.getElementById('profileChipBtn');
+const profileDropdown  = document.getElementById('profileDropdown');
+const profileArrow     = document.getElementById('profileArrow');
+
+function openProfileDropdown() {
+  profileDropdown.classList.add('open');
+  profileChipBtn.setAttribute('aria-expanded', 'true');
+  profileArrow.style.transform = 'rotate(180deg)';
+}
+function closeProfileDropdown() {
+  profileDropdown.classList.remove('open');
+  profileChipBtn.setAttribute('aria-expanded', 'false');
+  profileArrow.style.transform = '';
+}
+profileChipBtn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  if (profileDropdown.classList.contains('open')) {
+    closeProfileDropdown();
+  } else {
+    openProfileDropdown();
+    if (notifDropdown.classList.contains('open')) notifDropdown.classList.remove('open');
+  }
+});
+
+// Close dropdowns on outside click
+document.addEventListener('click', function() {
+  if (notifDropdown.classList.contains('open'))     notifDropdown.classList.remove('open');
+  if (profileDropdown.classList.contains('open'))   closeProfileDropdown();
+});
+
+// ── Logout Buttons ──────────────────────────────────────────
+document.getElementById('sidebarLogoutBtn').addEventListener('click', () => {
+  document.getElementById('logoutModal').classList.add('open');
+});
+document.getElementById('profileLogoutBtn').addEventListener('click', () => {
+  closeProfileDropdown();
+  document.getElementById('logoutModal').classList.add('open');
+});
+
+// ── Dark Mode ───────────────────────────────────────────────
+const themeBtn  = document.getElementById('dbThemeBtn');
+const themeIcon = document.getElementById('themeIcon');
+let darkMode = false;
+
+themeBtn.addEventListener('click', function() {
+  darkMode = !darkMode;
+  document.body.classList.toggle('dark', darkMode);
+  themeIcon.className = darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+});
+
+// ── RTL / LTR Layout Direction ──────────────────────────────
+const rtlBtn = document.getElementById('dbRtlBtn');
+
+function applyDirection(dir) {
+  document.documentElement.dir = dir;
+  document.body.dir = dir;
+  if (dir === 'rtl') {
+    document.body.classList.add('rtl');
+  } else {
+    document.body.classList.remove('rtl');
+  }
+  localStorage.setItem('crinchDirection', dir);
+}
+
+// Initial direction load
+const storedDir = localStorage.getItem('crinchDirection') || 'ltr';
+applyDirection(storedDir);
+
+if (rtlBtn) {
+  rtlBtn.addEventListener('click', function() {
+    const currentDir = document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr';
+    const nextDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+    applyDirection(nextDir);
+    showToast(nextDir === 'rtl' ? 'Switched to RTL layout' : 'Switched to LTR layout', 'info');
+  });
+}
+
+// ── Orders Filter ───────────────────────────────────────────
+document.querySelectorAll('.filter-pill').forEach(pill => {
+  pill.addEventListener('click', function() {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('#ordersTable tbody tr').forEach(row => {
+      const status = row.dataset.status || '';
+      row.style.display = (filter === 'all' || status === filter) ? '' : 'none';
+    });
+  });
+});
+
+document.getElementById('orderSearch').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('#ordersTable tbody tr').forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+});
+
+// ── Modals ──────────────────────────────────────────────────
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.db-modal.open').forEach(m => m.classList.remove('open'));
+  }
+});
+
+// ── Swap Snack ──────────────────────────────────────────────
+let currentSwapTarget = null;
+
+function openSwapModal(snackName) {
+  currentSwapTarget = snackName;
+  document.getElementById('swapTargetName').textContent = snackName;
+  openModal('swapModal');
+}
+
+function confirmSwap() {
+  const selected = document.querySelector('input[name="swapOption"]:checked');
+  if (selected) {
+    showToast(`Swapped "${currentSwapTarget}" → "${selected.value}"`, 'success');
+  }
+  closeModal('swapModal');
+}
+
+// ── Invoice Modal ───────────────────────────────────────────
+const invoiceDates = {
+  'CC-8942': { date: 'July 20, 2026',     method: 'UPI (alex@okaxis)' },
+  'CC-7611': { date: 'June 20, 2026',     method: 'Visa ending 4242' },
+  'CC-6204': { date: 'May 20, 2026',      method: 'Visa ending 4242' },
+  'CC-5198': { date: 'April 20, 2026',    method: 'Visa ending 4242' },
+  'CC-4322': { date: 'March 20, 2026',    method: 'MasterCard 8819' },
+  'CC-3870': { date: 'March 15, 2026',    method: 'Refunded' },
+};
+
+function openInvoiceModal(orderId) {
+  document.getElementById('invoiceOrderId').textContent = '#' + orderId;
+  const data = invoiceDates[orderId] || { date: '—', method: '—' };
+  document.getElementById('invDate').textContent   = data.date;
+  document.getElementById('invMethod').textContent = data.method;
+  openModal('invoiceModal');
+}
+
+// ── Address Save ────────────────────────────────────────────
+function saveAddress() {
+  const name   = document.getElementById('addrName').value.trim()   || 'New User';
+  const street = document.getElementById('addrStreet').value.trim() || 'New Street';
+  const city   = document.getElementById('addrCity').value.trim()   || 'City';
+  const state  = document.getElementById('addrState').value.trim()  || 'State';
+  const pin    = document.getElementById('addrPIN').value.trim()    || '000000';
+  const type   = document.getElementById('addrType').value;
+  const phone  = document.getElementById('addrPhone').value.trim()  || '+91 00000 00000';
+  const isPrimary = document.getElementById('addrDefault').checked;
+
+  const grid = document.getElementById('addressGrid');
+  const card = document.createElement('div');
+  card.className = 'addr-card' + (isPrimary ? ' primary-addr' : '');
+  card.innerHTML = `
+    <div class="addr-card-hd">
+      <span class="addr-type"><i class="fa-solid fa-${type === 'Home' ? 'house' : type === 'Office' ? 'briefcase' : 'location-dot'}"></i> ${type.toUpperCase()}</span>
+      ${isPrimary ? '<span class="addr-primary-tag"><i class="fa-solid fa-check"></i> Primary</span>' : ''}
+    </div>
+    <p class="addr-name">${name}</p>
+    <p class="addr-line">${street}</p>
+    <p class="addr-line">${city}, ${state} — ${pin}</p>
+    <p class="addr-phone"><i class="fa-solid fa-phone"></i> ${phone}</p>
+    <div class="addr-actions">
+      ${!isPrimary ? '<button class="btn btn-outline btn-sm" onclick="showToast(\'Set as primary\',\'success\')">Set Primary</button>' : ''}
+      <button class="btn btn-outline btn-sm"><i class="fa-solid fa-pen"></i> Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="this.closest(\'.addr-card\').remove()"><i class="fa-solid fa-trash"></i></button>
+    </div>`;
+  grid.appendChild(card);
+  closeModal('addAddressModal');
+  showToast('Address added successfully!', 'success');
+}
+
+// ── Referral Code Copy ──────────────────────────────────────
+function copyReferralCode() {
+  const input = document.getElementById('referralCodeInput');
+  input.select();
+  navigator.clipboard.writeText(input.value).then(() => {
+    showToast('Referral code copied to clipboard!', 'success');
+  });
+}
+
+// ── Redeem Points ───────────────────────────────────────────
+function redeemPoints(pts, rewardName) {
+  showToast(`Redeemed ${pts} pts for "${rewardName}"! 🎉`, 'success');
+}
+
+// ── Toast ───────────────────────────────────────────────────
+function showToast(msg, type = 'success') {
+  const zone = document.getElementById('toastZone');
+  const toast = document.createElement('div');
+  toast.className = 'toast-item';
+  const iconClass = type === 'success' ? 'fa-circle-check t-green' : type === 'error' ? 'fa-circle-xmark t-red' : 'fa-circle-info t-orange';
+  toast.innerHTML = `<i class="fa-solid ${iconClass}"></i><span>${msg}</span>`;
+  zone.appendChild(toast);
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(30px)';
+    toast.style.transition = 'all .3s ease';
+    setTimeout(() => toast.remove(), 300);
+  }, 3200);
+}
+
+// ── Update Welcome Greeting ─────────────────────────────────
+(function updateGreeting() {
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Good morning,' : hour < 17 ? 'Good afternoon,' : 'Good evening,';
+  const el = document.querySelector('.db-welcome-line1');
+  if (el) el.textContent = greeting;
+})();
+</script>
 </body>
-
 </html>
