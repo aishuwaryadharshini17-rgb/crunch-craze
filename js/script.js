@@ -201,106 +201,159 @@ const setupLogoutConfirm = () => {
   });
 };
 
-if (!isDashboardPage && !document.querySelector(".login-only-page") && !document.querySelector("footer")) {
-  const footer = document.createElement("footer");
+const COMMON_NAVBAR_HTML = `
+      <a class="brand" href="index.html" aria-label="Crunch Craze home">
+        <img class="logo" src="image/logo.png" alt="Crunch Craze logo">
+      </a>
+      <div class="header-controls">
+        <button class="dark-toggle" type="button" aria-label="Switch to dark mode"><i class="cc-icon cc-icon-moon" aria-hidden="true"></i></button>
+        <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+        <a class="auth-link login-link" href="login.html"><i class="cc-icon cc-icon-users" aria-hidden="true"></i> <span>Login</span></a>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home 1</a>
+        <a href="home2.html">Home 2</a>
+        <a href="about.html">About</a>
+        <a href="build-your-box.html">Build Your Box</a>
+        <a href="subscription-plans.html">Subscription Plans</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+        <div class="nav-actions" aria-label="Quick controls">
+          <button class="dark-toggle" type="button" aria-label="Switch to dark mode"><i class="cc-icon cc-icon-moon" aria-hidden="true"></i></button>
+          <button class="rtl-toggle" type="button" aria-label="Switch to RTL layout">RTL</button>
+          <a class="auth-link login-link" href="login.html"><i class="cc-icon cc-icon-users" aria-hidden="true"></i> <span>Login</span></a>
+        </div>
+      </nav>
+`;
 
-  // Try to mirror the site's header brand (logo, name, tag) so footer matches header
-  const brandElem = document.querySelector('.brand') || document.querySelector('.dashboard-logo');
-  const logoSrc = brandElem && brandElem.querySelector('img') ? brandElem.querySelector('img').getAttribute('src') : 'image/logo.png';
-  const brandName = brandElem && brandElem.querySelector('.brand-name') ? brandElem.querySelector('.brand-name').textContent.trim() : 'Crunch Craze';
-  const brandTag = brandElem && brandElem.querySelector('.brand-tag') ? brandElem.querySelector('.brand-tag').textContent.trim() : 'Specialty popcorn & snack boxes';
-
-  footer.innerHTML = `
-    <div class="footer-main">
-      <section>
-        <a class="footer-brand-lockup" href="index.html" aria-label="${brandName} home">
-          <img class="logo" src="${logoSrc}" alt="${brandName} logo">
-          <div class="brand-text">
-            <div class="brand-name">${brandName}</div>
-            <div class="brand-tag">${brandTag}</div>
-          </div>
+const COMMON_FOOTER_HTML = `
+    <div class="ccf-container">
+      <!-- Brand -->
+      <div class="ccf-brand">
+        <a href="index.html" class="ccf-logo-wrap">
+          <img src="image/logo.png" alt="Crunch Craze" class="ccf-logo">
         </a>
-        <p class="footer-tagline">Customize. Subscribe. Snack Happier.</p>
-        <p>
-          Discover delicious popcorn, gourmet snacks, and personalized snack boxes delivered right to your doorstep.
-          Enjoy fresh flavors, flexible subscriptions, and a premium snacking experience.
+        <p class="ccf-desc">
+          Discover delicious popcorn, gourmet snacks and personalized snack
+          boxes delivered right to your doorstep. Enjoy fresh flavors,
+          flexible subscriptions and premium snacking experiences.
         </p>
-      </section>
+      </div>
 
-      <section>
-        <h2>Quick Links</h2>
-        <ul class="footer-list">
-          <li><a href="index.html">${ccIcon("home")} Home</a></li>
-          <li><a href="about.html">${ccIcon("users")} About</a></li>
-          <li><a href="build-your-box.html">${ccIcon("package")} Build Your Box</a></li>
-          <li><a href="subscription-plans.html">${ccIcon("gift")} Subscription Plans</a></li>
-          <li><a href="dashboard.html">${ccIcon("target")} Dashboard</a></li>
-          <li><a href="contact.html">${ccIcon("message")} Contact Us</a></li>
+      <!-- Quick Links -->
+      <div class="ccf-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="home2.html">Home 2</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="build-your-box.html">Build Your Box</a></li>
+          <li><a href="subscription-plans.html">Subscription Plans</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
-      </section>
+      </div>
 
-      <section>
-        <h2>Categories</h2>
-        <ul class="footer-list">
-          <li><a href="#">${ccIcon("popcorn")} Popcorn</a></li>
-          <li><a href="#">${ccIcon("cookie")} Cookies</a></li>
-          <li><a href="#">${ccIcon("bar")} Chocolates</a></li>
-          <li><a href="#">${ccIcon("nut")} Nuts</a></li>
-          <li><a href="#">${ccIcon("chip")} Chips</a></li>
-          <li><a href="#">${ccIcon("leaf")} Healthy Snacks</a></li>
+      <!-- Categories -->
+      <div class="ccf-column">
+        <h3>Categories</h3>
+        <ul>
+          <li><i class="cc-icon cc-icon-popcorn" aria-hidden="true"></i> Popcorn</li>
+          <li><i class="cc-icon cc-icon-cookie" aria-hidden="true"></i> Cookies</li>
+          <li><i class="cc-icon cc-icon-bar" aria-hidden="true"></i> Chocolates</li>
+          <li><i class="cc-icon cc-icon-nut" aria-hidden="true"></i> Nuts</li>
+          <li><i class="cc-icon cc-icon-chip" aria-hidden="true"></i> Chips</li>
+          <li><i class="cc-icon cc-icon-leaf" aria-hidden="true"></i> Healthy Snacks</li>
         </ul>
-      </section>
+      </div>
 
-      <section>
-        <h2>Customer Support</h2>
-        <ul class="footer-list">
-          <li><a href="#">${ccIcon("truck")} Shipping & Delivery</a></li>
-          <li><a href="#">${ccIcon("package")} Returns & Refunds</a></li>
-          <li><a href="#">${ccIcon("shield")} Privacy Policy</a></li>
-          <li><a href="#">${ccIcon("credit-card")} Terms & Conditions</a></li>
-          <li><a href="#">${ccIcon("message")} Help Center</a></li>
-          <li><a href="contact.html">${ccIcon("phone")} Contact Us</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Contact Us</h2>
-        <span class="support-line">${ccIcon("map-pin")} Madurai, Tamil Nadu, India</span>
-        <span class="support-line">${ccIcon("mail")} support@crunchcraze.com</span>
-        <span class="support-line">${ccIcon("phone")} +91 98765 43210</span>
-        <span class="support-line">${ccIcon("clock")} Mon - Sat : 9:00 AM - 7:00 PM</span>
-
-        <h2>Newsletter</h2>
-        <p>Stay updated with exclusive offers, snack launches, and subscription discounts.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Email Address" aria-label="Email Address">
-          <button type="submit">Subscribe</button>
-        </form>
-
-        <h2>Follow Us</h2>
-        <ul class="social-list">
-          <li><a href="#" aria-label="Facebook"><span class="social-icon">f</span></a></li>
-          <li><a href="#" aria-label="Instagram"><span class="social-icon camera-icon"></span></a></li>
-          <li><a href="#" aria-label="X Twitter"><span class="social-icon">X</span></a></li>
-          <li><a href="#" aria-label="Pinterest"><span class="social-icon">P</span></a></li>
-          <li><a href="#" aria-label="YouTube"><span class="social-icon play-icon"></span></a></li>
-        </ul>
-      </section>
+      <!-- Contact -->
+      <div class="ccf-column">
+        <h3>Contact Us</h3>
+        <div class="ccf-contact">
+          <span>
+            <i class="cc-icon cc-icon-map-pin" aria-hidden="true"></i>
+            Madurai, Tamil Nadu, India
+          </span>
+          <span>
+            <i class="cc-icon cc-icon-mail" aria-hidden="true"></i>
+            support@crinchcraze.com
+          </span>
+          <span>
+            <i class="cc-icon cc-icon-phone" aria-hidden="true"></i>
+            +91 98765 43210
+          </span>
+          <span>
+            <i class="cc-icon cc-icon-clock" aria-hidden="true"></i>
+            Mon - Sat : 9:00 AM - 7:00 PM
+          </span>
+        </div>
+        <h4>Follow Us</h4>
+        <div class="ccf-social">
+          <a href="#" aria-label="Facebook"><span class="social-icon">f</span></a>
+          <a href="#" aria-label="Instagram"><span class="social-icon camera-icon"></span></a>
+          <a href="#" aria-label="Twitter"><span class="social-icon">X</span></a>
+          <a href="#" aria-label="Pinterest"><span class="social-icon">P</span></a>
+          <a href="#" aria-label="YouTube"><span class="social-icon play-icon"></span></a>
+        </div>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-      <span>&copy; 2026 Crunch Craze. All Rights Reserved.</span>
-      <span>Designed for Snack Lovers.</span>
+    <div class="ccf-bottom">
+      <p>© 2026 Crunch Craze. All Rights Reserved.</p>
+      <p>Designed for Snack Lovers.</p>
     </div>
-  `;
+`;
 
-  const page = document.querySelector(".page");
-  if (page) {
-    page.appendChild(footer);
-  } else {
-    document.body.appendChild(footer);
+const initCommonNavbar = () => {
+  if (isDashboardPage || document.body.classList.contains("login-only-page") || document.body.classList.contains("signin-auth-page") || document.body.classList.contains("login-auth-page")) {
+    return;
   }
-}
+
+  const header = document.querySelector("header:not(.dashboard-topbar)");
+  if (!header) return;
+
+  header.innerHTML = COMMON_NAVBAR_HTML;
+
+  let currentFile = window.location.pathname.split("/").pop();
+  if (!currentFile || currentFile === "" || currentFile === "/") {
+    currentFile = "index.html";
+  }
+
+  const navLinks = header.querySelectorAll("#main-nav > a");
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href === currentFile) {
+      link.setAttribute("aria-current", "page");
+      link.classList.add("active");
+    } else {
+      link.removeAttribute("aria-current");
+      link.classList.remove("active");
+    }
+  });
+};
+
+const initCommonFooter = () => {
+  if (isDashboardPage || document.body.classList.contains("login-only-page") || document.body.classList.contains("signin-auth-page") || document.body.classList.contains("login-auth-page")) {
+    return;
+  }
+
+  let footer = document.querySelector("footer");
+  if (!footer) {
+    footer = document.createElement("footer");
+    const page = document.querySelector(".page") || document.body;
+    page.appendChild(footer);
+  }
+
+  footer.className = "ccf-footer";
+  footer.innerHTML = COMMON_FOOTER_HTML;
+};
+
 
 const getButtonIconName = (element) => {
   const text = element.textContent.trim().toLowerCase();
@@ -384,6 +437,8 @@ const enhanceSiteIcons = () => {
   });
 };
 
+initCommonNavbar();
+initCommonFooter();
 enhanceSiteIcons();
 setupLogoutConfirm();
 
