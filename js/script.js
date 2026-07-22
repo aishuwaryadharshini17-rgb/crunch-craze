@@ -254,8 +254,8 @@ const COMMON_FOOTER_HTML = `
           <li><a href="about.html">About</a></li>
           <li><a href="build-your-box.html">Build Your Box</a></li>
           <li><a href="subscription-plans.html">Subscription Plans</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
         </ul>
       </div>
 
@@ -377,29 +377,6 @@ const getButtonIconName = (element) => {
 };
 
 const enhanceSiteIcons = () => {
-  const dashboardIconMap = {
-    "dashboard.html": "target",
-    "subscription.html": "gift",
-    "orders.html": "package",
-    "snack-box.html": "popcorn",
-    "rewards.html": "star",
-    "favorites.html": "heart",
-    "track-delivery.html": "truck",
-    "payments.html": "credit-card",
-    "address-book.html": "map-pin",
-    "notifications.html": "message",
-    "settings.html": "settings"
-  };
-
-  document.querySelectorAll(".dashboard-menu a").forEach((link) => {
-    const href = link.getAttribute("href") || "";
-    const iconName = dashboardIconMap[href];
-    const firstSpan = link.querySelector(":scope > span:first-child");
-
-    if (iconName && firstSpan && !firstSpan.classList.contains("cc-icon")) {
-      firstSpan.outerHTML = ccIcon(iconName, "dashboard-menu-icon");
-    }
-  });
 
   document.querySelectorAll(".button, .dashboard-actions button, .coupon-list button").forEach((button) => {
     if (button.querySelector(".cc-icon") || button.classList.contains("dark-toggle") || button.classList.contains("rtl-toggle")) {
